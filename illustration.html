@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lem_milky | Illustrations</title>
+  <link href="milkyyyy/LOGO-MILKY.png" rel="icon" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0px 40px 0px 40px;
+      background-color: #faf8f6;
+      color: #444;
+      overflow-x: hidden;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    img, video {
+      -webkit-user-drag: none;
+    }
+/* ------------------------------------------------------------------NAVBAR--------------------------------------------------------------*/
+     nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999; /* makes sure it's on top */
+      background-color: rgb(255, 255, 255); /* important to avoid transparency when scrolling */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      overflow-x: auto; /* prevents overflow */
+      box-sizing: border-box;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      background-color: rgb(0, 0, 0);
+      border-radius: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+
+    .logo-text {
+      font-size: 16px;
+      font-weight: bold;
+      font-family: cursive;
+      color: black;
+      text-transform: uppercase;
+    }
+
+    .logo i {
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;  /* 💡 allows wrapping on smaller screens */
+      max-width: 100%;  /* 💡 restricts it inside the nav width */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000000;
+      line-height: 1.6;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #444;
+    }
+
+
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-top: 10px;
+      }
+    }
+
+   .floating-dropdown {
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      min-width: 10px;
+      padding: 10px 0;
+      display: none;
+      z-index: 1000;
+    }
+
+    .floating-dropdown a {
+      color: #444;
+      padding: 8px 16px;
+      display: block;
+      text-decoration: none;
+      
+    }
+
+    .floating-dropdown a:hover {
+      background-color: #f0f0f0;
+    }  
+
+    .nav-links a.active,
+    .floating-dropdown-list a.active {
+      color: #000; /* or any highlight color */
+      font-weight: bold;
+      text-decoration: underline;
+    }
+/* ------------------------------------------------------------------GALLERY--------------------------------------------------------------*/
+
+    
+
+    .artwork-header {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 80px 40px 60px;
+      margin-top: 40px;
+      margin-bottom: 60px; /* 👈 adds space below the black box */
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center
+
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    .artwork-header h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 42px;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(255,255,255,0.1);
+      text-transform: uppercase;
+    }
+
+    .milky{
+      width: 80px;
+      height: 80px;
+    }
+
+/* ------------------------------------------------------------------GALLERY--------------------------------------------------------------*/
+    
+    .gallery {
+      width: 85%;
+      margin: auto;
+      padding: 10px;
+      justify-self: center;
+      flex-wrap: wrap;
+    }
+    
+    .gallery img {
+      width: 236.5px;
+      height: auto;
+      aspect-ratio: 1/1.5;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: cover;
+      flex: 2; 
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border: 2px solid #ddd;
+      margin-left: 10px;
+      
+    }
+
+    .gallery img:hover {
+      transform: scale(1.01);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .title{
+      font-family: cursive;
+      font-size: 20px;
+      font-weight: 600;
+      color: #888;
+      margin-bottom: 20px;
+      padding-top: 70px;
+    }
+
+    .horizontal-gallery{
+      width: 85%;
+      margin: auto;
+      padding: 10px;
+      justify-self: center;
+      flex-wrap: wrap;
+    }
+
+    .horizontal-gallery img {
+      border-radius: 10px;
+      width: 300px;
+      height: auto;
+      aspect-ratio: 1.414 / 1;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: cover;
+      flex: 2; /* makes images take equal space */
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border: 2px solid #ddd;
+      margin-left: 10px;
+    }
+
+    .horizontal-gallery img:hover {
+      transform: scale(1.01);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .image-container {
+      border-top: 2px solid #ddd;
+    }
+
+
+  /*  .gallery video {
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      cursor: pointer;
+      width: 50px;
+    }
+
+    .gallery video:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }*/
+    
+    .lightbox{
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .lightbox-content {
+      position: relative;
+      background: transparent;
+      max-width: 90%;
+      max-height: 90vh;
+      align-self: flex-start;
+      flex-shrink: 0;
+      margin-top: 0;
+      display: block;
+    }
+
+    .lightbox-content img{
+      display: block;
+      max-height: 90vh;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .text-lightbox {
+      background: #00000021;
+      box-sizing: border-box;
+      width: 300px;
+      align-self: start;
+      justify-content: left;
+      padding: 10px;
+      color: #ffffff;
+      border-radius: 20px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      flex-shrink: 1;
+    }
+
+    .text-lightbox h2{
+      font-family: cursive;
+      font-weight: bold;
+      text-align: right;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .text-lightbox p{
+      text-align: right;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .close-btn{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.544);
+    }
+
+    .video-thumbnail {
+      position: relative;
+      display: inline-block;
+      width: 48%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-thumbnail video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+      display: block;
+      pointer-events: none;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      display: block;
+      background-color: #000;
+      pointer-events: none;
+    }
+
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: rgba(255, 255, 255, 0.387);
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+
+    .video-thumbnail:hover .play-overlay{
+      color: rgb(255, 255, 255);
+    }
+
+    @media (max-width: 768px) {
+      .lightbox {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .lightbox-content, .text-lightbox {
+        max-width: 90%;
+      }
+    }
+
+/* ------------------------------------------------------------------CONTACT--------------------------------------------------------------*/
+
+    .contact-section {
+      background-color: #000000;
+      text-align: center;
+      padding-top: 40px;
+      padding-left: 40px;
+      padding-right: 40px;
+      margin-top: 60px;
+      height: 48vh;
+      width: 95vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      justify-content: left;
+      gap: 40px;
+    }
+
+    .social-icons{
+      align-content: left;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    .social-icons img  {
+      width: 25px;
+      height: 25px;
+      border-radius: 20%;
+      filter: grayscale(1);
+      transition: filter 0.3s ease;
+    }
+
+    .gmail-icon a{
+      filter: grayscale(1);
+      transition: filter 0.3s ease;
+    }
+
+    .social-icons img:hover, .gmail-icon a:hover {
+      filter: grayscale(0);
+    }
+
+    .quote{
+      text-align: left;
+    } 
+
+    .quote p{
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin: 0;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .contact-wrapper {
+      justify-content: left;
+      display: flex;
+      align-items: left;
+      gap: 40px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-image{
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      animation: none;
+    }
+
+    .contact-info{
+      text-align: left;
+    }
+    .contact-info p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #8a8a8a;
+    }
+
+    .contact-info a {
+      color: #8a8a8a;
+      text-decoration: none;
+    }
+
+    .copyright{
+      font-size: 0.875rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #777;
+      text-align: center;
+      align-items: end;
+    }
+    
+    
+    
+  </style>
+
+
+</head>
+<body>
+  <nav>
+    <div class="logo-wrapper">
+      <div class="logo">
+        <img src="milkyyyy/LOGO-MILKY.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%;">
+      </div>
+      <span class="logo-text">Illustrations</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#artworks ">Artworks</a>
+      <a href="index.html#animations">Animations</a>
+      <a href="index.html#artist-profile">Artist Profile</a>
+      <a href="#" class="dropdown-trigger">Collections &#x2335;</a>
+    </div>
+  </nav>
+
+  <div class="floating-dropdown">
+      <a href="illustration.html">Illustrations</a>
+      <a href="cert.html">Certificates</a>
+  </div>
+
+  <section>
+  <!-- <section class="artwork-header">
+      <img src="milkyyyy/ART-MILKY.png" alt="Art Placeholder" class="milky">
+      <h2>Illustrations</h2>
+    </section> -->
+  <div class="image-container">
+    <div class="title">
+      <h2>Character Design</h2>
+    </div>  
+      <div class="horizontal-gallery">
+        <img src="Art/chardesign/kai bino CD.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/kai bino CD.jpg")'/>
+        <img src="Art/chardesign/kinnCD.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/kinnCD.png")'/>
+        <img src="Art/chardesign/shaunCD.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/shaunCD.png")'/>
+        <img src="Art/chardesign/austinCD.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/austinCD.png")'/>
+        <img src="Art/chardesign/kiaraCD.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/kiaraCD.png")'/>
+        <img src="Art/chardesign/kinn emotion.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/kinn emotion.png")'/>
+        <img src="Art/chardesign/shaun emotion.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/shaun emotion.png")'/>
+        <img src="Art/chardesign/austin emotion.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/austin emotion.png")'/>
+        <img src="Art/chardesign/kiara emotion.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/kiara emotion.png")'/>
+        <img src="Art/chardesign/chrislarasCD.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/chrislarasCD.png")'/>
+      </div>
+  </div>
+  <div class="image-container">
+    <div class="title">
+      <h2>Inktober Comic</h2>
+    </div>
+      <div class="gallery">
+        <img src="Art/comic/inktober_1.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Art/comic/inktober_1.jpg")'/>
+        <img src="Art/comic/inktober_2.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Art/comic/inktober_2.jpg")'/>
+        <img src="Art/comic/inktober_3.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Art/comic/inktober_3.jpg")'/>
+        <img src="Art/comic/inktober_4.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Art/comic/inktober_4.jpg")'/>
+        <img src="Art/comic/inktober_5.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Art/comic/inktober_5.jpg")'/>
+        <img src="Art/comic/inktober_6.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Art/comic/inktober_6.jpg")'/>
+      </div>
+  </div>
+  <div class="image-container">
+    <div class="title">
+      <h2>Storyboards</h2>
+    </div>
+      <div class="gallery">
+        <img src="Art/storyboard/page 1.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 1.png")'/>
+        <img src="Art/storyboard/page 2.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 2.png")'/>
+        <img src="Art/storyboard/page 3.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 3.png")'/>
+        <img src="Art/storyboard/page 4.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 4.png")'/>
+        <img src="Art/storyboard/page 5.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 5.png")'/>
+        <img src="Art/storyboard/page 6.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 6.png")'/>
+        <img src="Art/storyboard/page 7.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 7.png")'/>
+        <img src="Art/storyboard/page 8.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 8.png")'/>
+        <img src="Art/storyboard/page 9.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 9.png")'/>
+        <img src="Art/storyboard/page 10.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 10.png")'/>
+        <img src="Art/storyboard/page 11.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 11.png")'/>
+        <img src="Art/storyboard/page 12.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 12.png")'/>
+        <img src="Art/storyboard/page 13.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 13.png")'/>
+        <img src="Art/storyboard/page 14.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 14.png")'/>
+        <img src="Art/storyboard/page 15.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 15.png")'/>
+        <img src="Art/storyboard/page 16.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 16.png")'/>
+        <img src="Art/storyboard/page 17.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 17.png")'/>
+        <img src="Art/storyboard/page 18.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 18.png")'/>
+      </div>
+  </div>
+   <div class="image-container">
+    <div class="title">
+      <h2>Digital Illustrations</h2>
+    </div>
+      <div class="gallery">
+        <img src="Art/digital/1. Anime Eyes.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/1. Anime Eyes.png")'/>
+        <img src="Art/digital/2. Head angles.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/2. Head angles.png")'/>
+        <img src="Art/digital/3. Gesture Drawing.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/3. Gesture Drawing.png")'/>
+        <img src="Art/digital/4. Hairstyles.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/4. Hairstyles.png")'/>
+        <img src="Art/digital/5. Hands.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/5. Hands.png")'/>
+        <img src="Art/digital/Spiderghost color.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Spiderghost color.png")'/>
+        <img src="Art/digital/Elemental fire.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Elemental fire.png")'/>
+        <img src="Art/digital/Elemental Earth.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Elemental Earth.png")'/>
+        <img src="Art/digital/Elemental Water.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Elemental Water.png")'/>
+        <img src="Art/digital/Dissimilar 2nd concept poster.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Dissimilar 2nd concept poster.png")'/>
+        <img src="Art/digital/Dissimilar 1st concept poster.png" style="aspect-ratio: 1 / 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Dissimilar 1st concept poster.png")'/>
+        <img src="Art/digital/Alucaria story.jpg" style="aspect-ratio: 1 / 1; align-self: start;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Alucaria story.jpg")'/>
+          <img src="Art/digital/Alucaria map.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Alucaria map.png")'/>
+          <img src="Art/digital/redparadise.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/redparadise.png")'/>
+          <img src="Art/digital/kinn&shaun faceoff.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/kinn&shaun faceoff.png")'/>
+       </div>
+  </div>
+  <div class="image-container">
+    <div class="title">
+      <h2>Graphic Design</h2>
+    </div>
+      <div class="gallery">
+        <img src="Art/logos/1.logo lem.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/1.logo lem.png")'/>
+        <img src="Art/logos/2.logo cake.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/2.logo cake.png")'/>
+        <img src="Art/logos/3.logo cookie.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/3.logo cookie.png")'/>
+        <img src="Art/logos/4.logo pixelwork.jpg" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/4.logo pixelwork.jpg")'/>
+        <img src="Art/logos/5.logo Pworx.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/5.logo Pworx.png")'/>
+        <img src="Art/logos/6.logo Artstack.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/6.logo Artstack.png")'/>
+        <img src="Art/logos/7.logo dreadnox.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/7.logo dreadnox.png")'/>
+        <img src="Art/logos/8.Alucaria galladore.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/8.Alucaria galladore.png")'/>
+        <img src="Art/logos/9.Alucaria osinu.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/9.Alucaria osinu.png")'/>
+        <img src="Art/logos/10.Alucaria philgako.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/10.Alucaria philgako.png")'/>
+        <img src="Art/logos/11.Alucaria Vilkara.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/11.Alucaria Vilkara.png")'/>
+        <img src="Art/logos/12.Alucaria logo.jpg" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/12.Alucaria logo.jpg")'/>
+        <img src="Art/logos/13.DissimilarPoster.png" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/13.DissimilarPoster.png")'/>
+      </div>
+  </div>
+  <div class="image-container">
+    <div class="title">
+      <h2>Hand-Drawn</h2>
+    </div>
+      <div class="gallery">
+        <img src="Art/traditional/1.Stan.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/1.Stan.jpg")'/>
+        <img src="Art/traditional/2.Stark.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/2.Stark.jpg")'/>
+        <img src="Art/traditional/3.Thor.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/3.Thor.jpg")'/>
+        <img src="Art/traditional/4.Strange.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/4.Strange.jpg")'/>
+        <img src="Art/traditional/5.Thanos.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/5.Thanos.jpg")'/>
+        <img src="Art/traditional/6.venom.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/6.venom.jpg")'/>
+        <img src="Art/traditional/7.Sketch 1.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/7.Sketch 1.jpg")'/>
+        <img src="Art/traditional/8.Sketch 2.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/8.Sketch 2.jpg")'/>
+        <img src="Art/traditional/9.Cameraman.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/9.Cameraman.jpg")'/>
+        <img src="Art/traditional/10.Dualwielder magic.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/10.Dualwielder magic.jpg")'/>
+        <img src="Art/traditional/11.greg&grey.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/11.greg&grey.jpg")'/>
+        <img src="Art/traditional/12.Lancelot.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/12.Lancelot.jpg")'/>
+        <img src="Art/traditional/13.TodoMomo.jpg" style=" aspect-ratio: 1.414 / 1; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/13.TodoMomo.jpg")'/>
+        <img src="Art/traditional/14.Aot.jpg" style="aspect-ratio: 1.414 / 1; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/14.Aot.jpg")'/>
+      </div>
+  </div>
+  <div class="image-container">
+    <div class="title">
+      <h2>Portraits</h2>
+    </div>
+      <div class="gallery">
+        <img src="Art/personal/1.lemchibby.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/1.lemchibby.png")'/>
+        <img src="Art/personal/2.lemselfdigi.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/2.lemselfdigi.png")'/>
+        <img src="Art/personal/3.her-Digital.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/3.her-Digital.png")'/>
+        <img src="Art/personal/4.lemtinedigi1.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/4.lemtinedigi1.png")'/>
+        <img src="Art/personal/5.lemtinedigi2.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/5.lemtinedigi2.png")'/>
+        <img src="Art/personal/6.lemtinedigi3.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/6.lemtinedigi3.png")'/>
+        <img src="Art/personal/7.mamadigi.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/7.mamadigi.png")'/>
+        <img src="Art/personal/8.her-color pencil1.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/8.her-color pencil1.jpg")'/>
+        <img src="Art/personal/9.her-colorpencil2.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/9.her-colorpencil2.jpg")'/>
+        <img src="Art/personal/10.her-lineart.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/10.her-lineart.jpg")'/>
+        <img src="Art/personal/11.Her-portrait.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/11.Her-portrait.jpg")'/>
+        <img src="Art/personal/12.her-anime.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/12.her-anime.jpg")'/>
+        <img src="Art/personal/13.lemtinePortrait.jpg" style=" aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/13.lemtinePortrait.jpg")'/>
+        <img src="Art/personal/14.Fampic.png" style="aspect-ratio: 1.414 / 1; width: 419px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/14.Fampic.png")'/>
+      </div>
+  </div>
+
+
+
+    
+      <div id="image-lightbox" class="lightbox" onclick="closeImageLightbox()">
+     <!--  <div class="text-lightbox">
+           <h2 id="image-title"></h2>
+          <p id="image-description"></p>
+        </div> --> 
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+          <img id="lightbox-image" src="" alt="">
+        </div>
+      </div>
+
+  </section>
+
+       <script>/*dropdown JAVASCRIPT*/
+          const trigger = document.querySelector('.dropdown-trigger');
+          const menu = document.querySelector('.floating-dropdown');
+
+          trigger.addEventListener('mouseenter', () => {
+            const rect = trigger.getBoundingClientRect();
+            const menuWidth = menu.offsetWidth;
+            const screenWidth = window.innerWidth;
+
+            let left = rect.left;
+
+            if (left + menuWidth > screenWidth) {
+              left = screenWidth - menuWidth - 10; // Prevent overflow
+            }
+
+            menu.style.left = `${left}px`;
+            menu.style.top = `${rect.bottom + window.scrollY}px`;
+            menu.style.display = 'block';
+          });
+
+          trigger.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+              if (!menu.matches(':hover')) {
+                menu.style.display = 'none';
+              }
+            }, 100);
+          });
+
+          menu.addEventListener('mouseleave', () => {
+            menu.style.display = 'none';
+          });
+
+          menu.addEventListener('mouseenter', () => {
+            menu.style.display = 'block';
+          });
+        </script>
+        
+        <script> /*Scroll*/
+          const sections = document.querySelectorAll("section[id], footer[id]");
+          const navLinks = document.querySelectorAll(".nav-links a, .floating-dropdown-list a");
+          
+          window.addEventListener("load", () => window.dispatchEvent(new Event("scroll")));
+
+          // Listen for scroll events
+          window.addEventListener("scroll", () => {
+            let current = "";
+            const scrollY = window.pageYOffset;
+
+            sections.forEach((section, index) => {
+              const sectionTop = section.offsetTop - 100;
+              const sectionHeight = section.offsetHeight;
+              
+              if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+              }
+
+              // Optional: if you're near bottom of the page, always highlight the last section
+              if ((window.innerHeight + scrollY) >= document.body.offsetHeight - 50) {
+                current = sections[sections.length - 1].getAttribute("id");
+              }
+            });
+
+            navLinks.forEach(link => {
+              const href = link.getAttribute("href").replace("#", "");
+              const isCollection = link.classList.contains("collection-link");
+
+              if (!isCollection) {
+                link.classList.toggle("active", href === current);
+              }
+            });
+          });
+
+        </script>
+        <script> /*gallery*/
+          function openImageLightbox(src, title, description) {
+            document.getElementById('lightbox-image').src = src;
+        /*  document.getElementById('image-title').textContent = title;
+            document.getElementById('image-description').textContent = description;  */
+            document.getElementById('image-lightbox').style.display = 'flex';
+          }
+
+          function closeImageLightbox() {
+            document.getElementById('image-lightbox').style.display = 'none';
+            document.getElementById('lightbox-image').src = '';
+          }
+/*
+          function openVideoLightbox(src, title, description) {
+            const videoPlayer = document.getElementById('video-player');
+            document.getElementById('video-title').textContent = title;
+            document.getElementById('video-description').textContent = description;
+            videoPlayer.src = src;
+            videoPlayer.load();
+            videoPlayer.controls = true;
+            videoPlayer.muted = false;
+            videoPlayer.autoplay = true;
+            videoPlayer.loop = true;
+            videoPlayer.playsInline = true;
+            videoPlayer.play().catch(e => console.warn("Autoplay prevented:", e));
+            document.getElementById('video-lightbox').style.display = 'flex';
+          }
+
+          function closeVideoLightbox() {
+            const videoLightbox = document.getElementById('video-lightbox');
+            const videoPlayer = document.getElementById('video-player');
+            videoLightbox.style.display = 'none';
+            videoPlayer.pause();
+            videoPlayer.src = "";
+          }
+
+        */
+        </script>
+
+        <script> /*contact milky animation*/
+        document.addEventListener('DOMContentLoaded', () => {
+          const image = document.querySelector('.contact-image');
+          const frames = [
+            '/milkyyyy/CONTACT-MILKY1.png',
+            '/milkyyyy/CONTACT-MILKY2.png',
+            '/milkyyyy/CONTACT-MILKY3.png',
+            '/milkyyyy/CONTACT-MILKY4.png',
+            '/milkyyyy/CONTACT-MILKY5.png',
+            '/milkyyyy/CONTACT-MILKY6.png',
+            '/milkyyyy/CONTACT-MILKY7.png',
+            '/milkyyyy/CONTACT-MILKY8.png'
+          ];
+
+          // Preload all frames
+          frames.forEach(src => {
+            const img = new Image();
+            img.src = src;
+          });
+
+          let frameIndex = 0;
+          let interval;
+
+          const wrapper = document.querySelector('.contact-wrapper');
+
+          if (wrapper && image) {
+            wrapper.addEventListener('mouseenter', () => {
+              frameIndex = 0;
+              clearInterval(interval);
+              interval = setInterval(() => {
+                image.src = frames[frameIndex];
+                frameIndex++;
+                if (frameIndex >= frames.length) clearInterval(interval);
+              }, 80);
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+              clearInterval(interval);
+              image.src = frames[0]; // Reset to first frame
+            });
+          }
+        });
+      </script>
+      <script>
+          const scrollContainer = document.getElementById('scrollArea');
+
+          // Scroll by button
+          function scrollLeft() {
+            scrollContainer.scrollBy({
+              left: -300,
+              behavior: 'smooth'
+            });
+          }
+
+          function scrollRight() {
+            scrollContainer.scrollBy({
+              left: 300,
+              behavior: 'smooth'
+            });
+          }
+
+          // Drag to scroll
+          let isDown = false;
+          let startX;
+          let scrollLeftStart;
+
+          scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.classList.add('active');
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeftStart = scrollContainer.scrollLeft;
+          });
+
+          scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.classList.remove('active');
+          });
+
+          scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.classList.remove('active');
+          });
+
+          scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 2; // Speed multiplier
+            scrollContainer.scrollLeft = scrollLeftStart - walk;
+          });
+        </script>
+
+
+
+
+
+
+
+        
+
+
+</body>
+  <footer id="contact" class="contact-section">
+    <span class="quote">
+    <p>“Let’s do art together”</p>
+    </span>
+  <div class="contact-wrapper">
+    <img src="/milkyyyy/CONTACT-MILKY1.png" alt="Top Image" class="contact-image">
+    <div class="contact-info">
+      <p>📍 Anolid, Mangaldan, Pangasinan, 2432</p>
+      <p>📞 (+63)‑947‑693‑5005</p>
+      <p>📄 <a href="pdfs/Belarmino-LemrishJohn-CV.pdf" download class="download-btn">Download CV</a></p>
+      <p>📃 <a href="pdfs/LemrishJohnBelarmino_Resume2025.pdf" download class="download-btn">Download Resume</a></p>
+      <div class="social-icons">
+      <a href="https://www.facebook.com/lemrish" target="_blank">
+        <img src="icons/Fbicon.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/lem_milky" target="_blank">
+        <img src="icons/Igicon.png" alt="Instagram" />
+      </a>
+      <a href="https://www.linkedin.com/in/lemrish" target="_blank">
+        <img src="icons/Lnicon.png" alt="LinkedIn" />
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lemrishjohn@gmail.com&su=Let's%20create%20art%20together" target="_blank" rel="noopener noreferrer">
+        <img src="icons/Gmailicon.png" alt="Gmail" />
+      </a>
+    </div>
+    </div>
+  </div>
+    <div class="copyright">
+      <p>
+        &copy; 2025 Lem_milky. All rights reserved.
+      </p>
+      <p>
+        Some works are part of internships and school collaborations and are shown for portfolio purposes only. <br> All rights belong to their respective owners.
+      </p>
+    </div>
+      
+   
+
+  </footer>
+
+</html>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("img").forEach(img => {
+      img.loading ="lazy";
+    });
+  });
+</script>

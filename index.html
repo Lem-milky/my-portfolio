@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lem_milky | Portfolio</title>
+  <link href="milkyyyy/LOGO-MILKY.png" rel="icon" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0px 40px 0px 40px;
+      background-color: #faf8f6;
+      color: #444;
+      overflow-x: hidden;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    img, video {
+      -webkit-user-drag: none;
+    }
+/* ------------------------------------------------------------------NAVBAR--------------------------------------------------------------*/
+     nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999; /* makes sure it's on top */
+      background-color: rgb(255, 255, 255); /* important to avoid transparency when scrolling */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      overflow-x: auto; /* prevents overflow */
+      box-sizing: border-box;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      background-color: rgb(0, 0, 0);
+      border-radius: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+
+    .logo-text {
+      font-size: 16px;
+      font-weight: bold;
+      font-family: cursive;
+      color: black;
+      text-transform: uppercase;
+    }
+
+    .logo i {
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;  /* 💡 allows wrapping on smaller screens */
+      max-width: 100%;  /* 💡 restricts it inside the nav width */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000000;
+      line-height: 1.6;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #444;
+    }
+
+
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-top: 10px;
+      }
+    }
+
+   .floating-dropdown {
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      min-width: 10px;
+      padding: 10px 0;
+      display: none;
+      z-index: 1000;
+    }
+
+    .floating-dropdown a {
+      color: #444;
+      padding: 8px 16px;
+      display: block;
+      text-decoration: none;
+      
+    }
+
+    .floating-dropdown a:hover {
+      background-color: #f0f0f0;
+    }  
+
+    .nav-links a.active,
+    .floating-dropdown-list a.active {
+      color: #000; /* or any highlight color */
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+
+
+
+/* JS handles showing the dropdown on hover */
+
+/* ------------------------------------------------------------------HOME--------------------------------------------------------------*/
+    .about-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+      background: transparent;
+      padding: 0px 40px;
+      border-radius: 16px;
+      text-align: left;
+      flex-wrap: wrap; /* responsive */
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h1 {
+      font-family: cursive;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .about-text span{
+      font-family: cursive;
+      font-weight: 100;
+    }
+
+    .about-text h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .profile-pic {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20%;
+    }
+
+
+    button {
+      font-family: cursive;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      background-color: #000;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+/* ------------------------------------------------------------------GALLERY--------------------------------------------------------------*/
+
+    
+
+    .artwork-header {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 80px 40px 60px;
+      margin-top: 40px;
+      margin-bottom: 60px; /* 👈 adds space below the black box */
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center
+
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    .artwork-header h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 42px;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(255,255,255,0.1);
+      text-transform: uppercase;
+    }
+
+    .milky{
+      width: 80px;
+      height: 80px;
+    }
+
+/* ------------------------------------------------------------------GALLERY--------------------------------------------------------------*/
+    
+    .gallery {
+      display: flex;
+      gap: 20px; /* space between images */
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding-bottom: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .gallery img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: cover;
+      flex: 2; /* makes images take equal space */
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.01);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .gallery video {
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      cursor: pointer;
+      width: 50px;
+    }
+
+    .gallery video:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    
+    .lightbox{
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .lightbox-content {
+      position: relative;
+      background: transparent;
+      max-width: 90%;
+      max-height: 90vh;
+      align-self: flex-start;
+      flex-shrink: 0;
+      margin-top: 0;
+      display: block;
+    }
+
+    .lightbox-content img{
+      display: block;
+      max-height: 90vh;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .text-lightbox {
+      background: #00000021;
+      box-sizing: border-box;
+      width: 300px;
+      align-self: start;
+      justify-content: left;
+      padding: 10px;
+      color: #ffffff;
+      border-radius: 20px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      flex-shrink: 1;
+    }
+
+    .text-lightbox h2{
+      font-family: cursive;
+      font-weight: bold;
+      text-align: right;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .text-lightbox p{
+      text-align: right;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .close-btn{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.544);
+    }
+
+    .video-thumbnail {
+      position: relative;
+      display: inline-block;
+      width: 48%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-thumbnail video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+      display: block;
+      pointer-events: none;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      display: block;
+      background-color: #000;
+      pointer-events: none;
+    }
+
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: rgba(255, 255, 255, 0.387);
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+
+    .video-thumbnail:hover .play-overlay{
+      color: rgb(255, 255, 255);
+    }
+
+    @media (max-width: 768px) {
+      .lightbox {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .lightbox-content, .text-lightbox {
+        max-width: 90%;
+      }
+    }
+
+
+/* ------------------------------------------------------------------ARTIST PROFILE --------------------------------------------------------------*/
+
+      .artist-profile {
+        padding: 4rem 2rem;
+        background: #fff;
+        text-align: center;
+      }
+
+      .artist-heading {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #222;
+      }
+
+      .artist-description {
+        max-width: 700px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin: 0 auto 2.5rem;
+        color: #555;
+      }
+
+      .artist-subheading {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .artist-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      .artist-icons img {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .artist-icons img:hover {
+        transform: scale(1.1);
+      }
+      
+      .artist-image-wrapper {
+        margin-bottom: 2rem;
+      }
+
+      .artist-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #ccc;
+      }
+
+      .artist-section {
+        padding: 60px 20px;
+        background-color: #fff;
+        text-align: center;
+        border: none;
+        border-top: 2px solid #ccc;
+        width: 90%;
+        margin: 60px auto;
+      }
+
+      .artist-heading {
+        font-family: cursive;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .artist-description {
+        max-width: 900px;
+        margin: 0 auto 2rem auto;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+       
+      }
+
+      .artist-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      
+      }
+
+      .artist-icons img {
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+        transition: transform 0.3s;
+        border-radius: 50%;
+        background-color: white;
+      }
+
+      .capcut, .figma{
+        border: 1px solid #a4a4a4;
+      }
+
+      .artist-icons img:hover {
+        transform: scale(1.1);
+      }
+      .artist-profile-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto 2rem auto;
+        flex-wrap: wrap;
+      }
+
+      .artist-profile-pic {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      @media screen and (max-width: 768px) {
+        .artist-profile-wrapper {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .artist-profile-pic {
+          width: 140px;
+          height: 140px;
+        }
+
+        .artist-description {
+          padding: 0 10px;
+        }
+      }
+
+
+    
+/* ------------------------------------------------------------------CONTACT--------------------------------------------------------------*/
+
+    .contact-section {
+      background-color: #000000;
+      text-align: center;
+      padding-top: 40px;
+      padding-left: 40px;
+      padding-right: 40px;
+      margin-top: 60px;
+      height: 48vh;
+      width: 95vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      justify-content: left;
+      gap: 40px;
+    }
+
+    .social-icons{
+      align-content: left;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    .social-icons img  {
+      width: 25px;
+      height: 25px;
+      border-radius: 20%;
+      filter: grayscale(1);
+      transition: filter 0.3s ease;
+    }
+
+    .gmail-icon a{
+      filter: grayscale(1);
+      transition: filter 0.3s ease;
+    }
+
+    .social-icons img:hover, .gmail-icon a:hover {
+      filter: grayscale(0);
+    }
+
+    .quote{
+      text-align: left;
+    } 
+
+    .quote p{
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin: 0;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .contact-wrapper {
+      justify-content: left;
+      display: flex;
+      align-items: left;
+      gap: 40px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-image{
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      animation: none;
+    }
+
+    .contact-info{
+      text-align: left;
+    }
+    .contact-info p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #8a8a8a;
+    }
+
+    .contact-info a {
+      color: #8a8a8a;
+      text-decoration: none;
+    }
+
+    .copyright{
+      font-size: 0.875rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #777;
+      text-align: center;
+      align-items: center;
+    }
+    
+    
+    
+  </style>
+
+
+</head>
+<body>
+  <nav>
+    <div class="logo-wrapper">
+      <div class="logo">
+        <img src="milkyyyy/LOGO-MILKY.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%;">
+      </div>
+      <span class="logo-text">Portfolio</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#artworks">Artworks</a>
+      <a href="#animations">Animations</a>
+      <a href="#artist-profile">Artist Profile</a>
+      <a href="#blank" class="dropdown-trigger">Collections &#x2335;</a>
+    </div>
+  </nav>
+
+  <div class="floating-dropdown">
+      <a href="illustration.html">Illustrations</a>
+      <a href="cert.html">Certificates</a>
+  </div>
+
+  <section id="home" class="about-section">
+  <div class="about-text">
+    <h1><span class="greet">Hi, I'm</span><br>Lemrish John Belarmino</h1>
+    <h2>Character Illustrator • Storyboard Artist • Animator</h2>
+   <p>
+    I’m Lem_milky, a visual artist and animator from the Philippines. I love drawing characters, making anime fanart, and animating scenes. My work blends traditional lineart with digital color, and I enjoy bringing drawings to life through motion and storytelling.
+  </p>
+    <button onclick="location.href='#contact'" class="btn">Ink Me a Message</button>
+  </div>
+  <img src="me/me blurd box.jpg" alt="Lemrish John Belarmino" class="profile-pic" />
+</section>
+
+  <section id="artworks">
+    <section class="artwork-header">
+      <img src="milkyyyy/ART-MILKY.png" alt="Art Placeholder" class="milky">
+      <h2>Artworks</h2>
+    </section>
+      <div class="gallery">
+        <img src="Special art/1.DarylDixon.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/1.DarylDixon.png", "Daryl Dixon", "Ink and undead — a tribute to The Walking Dead’s survival spirit.")'/>
+        <img src="Special art/2.Deadpool Bye Bye Bye.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/2.Deadpool Bye Bye Bye.png", "Deadpool: Bye Bye Bye", "Marvel Jesus — Deadpool’s twisted sense of humor in vibrant fan-art.")'/>
+        <img src="Special art/3.Mizu.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/3.Mizu.png", "Mizu", "Fanart of Blue Eye Samurai — a calm soul in a storm of steel.")'/>
+        <img src="Special art/4.kai bino final design.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/4.kai bino final design.png", "Kai Bino", "A lost assassin wielding dual magic, born from dusk and vengeance.")'/>
+      </div>
+      <div class="gallery">
+        <img src="Special art/5.Gojo.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/5.Gojo.png", "Satoru Gojo", "Infinite domain. Infinite style. Hollow Purple unleashed.")'/>
+        <img src="Special art/6.Spiderghost color Bg.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/6.Spiderghost color Bg.png", "Spiderghost Halloween", "Spidey goes spooky — your friendly ghost in the multiverse.")'/>
+        <img src="Special art/7.shaun.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/7.shaun.png", "Shaun", "A dark entity born of shadows — eater of power crystals.")'/>
+        <img src="Special art/8.ohara colored.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/8.ohara colored.png", "Miguel O’Hara", "Spider-Man 2099 Daddy of all Spiders.")'/>
+      </div>
+       <div class="gallery">
+        <img src="Special art/9.Tyne akenamo.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/9.Tyne akenamo.png", "Tyne Akenamo", "Alucaria’s greatest thief — fast hands, faster escapes.")'/>
+        <img src="Special art/10.Rivulet X Spearmaster.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/10.Rivulet X Spearmaster.png", "Rivulet X Spearmaster", "RainWorld fanart — two Slugcats, one bond.")'/>
+        <img src="Special art/11.milky-and-geloo.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/11.milky-and-geloo.png", "Milky and Geloo", "Classroom chaos meets art contest — officer edition.")'/>
+        <img src="Special art/12.Thor colored.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/12.Thor colored.jpg", "Thor Odinson", "God of Thunder awakened — divine power meets raw color.")'/>
+      </div>
+      <div class="gallery">
+        <img src="Special art/13.Okarun.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/13.Okarun.jpg", "Okarun", "Dandadan fanart — raw and hand-drawn, from sketch to spirit.")'/>
+        <img src="Special art/14.Turbo granny.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/14.Turbo granny.jpg", "Turbo Granny", "Hand-drawn horror — Dandadan’s chaotic speed demon.")'/>
+        <img src="Special art/15.gaara.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/15.gaara.jpg", "Gaara - Sand Shinobi", "Hand-drawn power - Shaped by pain, guarded by sand")'/>
+        <img src="Special art/16.Roz.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/16.Roz.jpg", "The Wild Robot", "ROZZUM Unit 7134 — gentle lines, silent story.")'/>
+      </div>
+      <div class="gallery">
+        <img src="Special art/21.kinncloseyes.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/21.kinncloseyes.png", "Kinn Reacher: Eyes Closed", "DISSIMILAR teaser — calm before the storm.")'/>
+        <img src="Special art/22.kinnjump.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/22.kinnjump.png", "Kinn Reacher: Leap", "Leaping into destiny — action frame for DISSIMILAR teaser.")'/>
+        <img src="Special art/23.kinnsleep.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/23.kinnsleep.png", "Kinn Reacher: Rest", "Every hero rests — final concept art from teaser trailer.")'/>
+      </div>
+      <div id="image-lightbox" class="lightbox" onclick="closeImageLightbox()">
+        <div class="text-lightbox">
+           <h2 id="image-title"></h2>
+          <p id="image-description"></p>
+        </div>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+          <img id="lightbox-image" src="" alt="">
+        </div>
+      </div>
+
+  </section>
+  <section id = "animations">
+    <section class="artwork-header">
+      <img src="milkyyyy/ANIM-MILKY.png" alt="Art Placeholder" class="milky">
+      <h2>Animations</h2>
+    </section>
+      <div class="gallery"> <!--first section -->
+       <div class="video-thumbnail" onclick='openVideoLightbox("Special art/SEQ33_10 Final Output.mp4", "Rocketsheep Studio first task", "A brief transition test featuring character movement and timing practice. Part of a task during my animation internship at RocketSheep Studio.")'>
+          <video src="Special art/SEQ33_10 Final Output.mp4"></video>
+          <div class="play-overlay">&#9658;</div>
+        </div>
+       <div class="video-thumbnail" onclick='openVideoLightbox("Special art/SEQ33_11 Final Output.mp4", "Rocketsheep Studio second task", "A quick scene capturing a character’s surprise expression and movement study")'>
+          <video src="Special art/SEQ33_11 Final Output.mp4"></video>
+          <div class="play-overlay">&#9658;</div>
+        </div>
+      </div>
+      <div class="gallery"> <!--second section -->
+        <div class="video-thumbnail" onclick='openVideoLightbox("Special art/SEQ33_12 Final Output.mp4", "Rocketsheep Studio third task", "unknown description")'>
+          <video src="Special art/SEQ33_12 Final Output.mp4"></video>
+          <div class="play-overlay">&#9658;</div>
+        </div>
+       <div class="video-thumbnail" onclick='openVideoLightbox("Special art/SEQ52_51 Final Output.mp4", "Rocketsheep Studio fourth task", "unknown description")'>
+          <video src="Special art/SEQ52_51 Final Output.mp4"></video>
+          <div class="play-overlay">&#9658;</div>
+        </div>
+      </div>
+      <div class="gallery"> <!--third section -->
+        <div class="video-thumbnail" onclick='openVideoLightbox("Special art/DISSIMILAR_Trailer.mp4", "DISSIMILAR: Crystal of Destiny - Teaser Trailer", "The first Concept for Dissimilar - Capstone Project 1")'>
+          <video poster="Special art/21.kinncloseyes.png" src="Special art/DISSIMILAR_Trailer.mp4"></video>
+          <div class="play-overlay">&#9658;</div>
+        </div>
+        <div class="video-thumbnail" onclick='openVideoLightbox("Special art/Dissimilar Fight scene.mp4", "DISSIMILAR: Crystal of Destiny - Fight Scene", "A short fight scene between Kinn Reacher, a crystal wielder in blue, and Shaun, a shadowy enemy. Set in a broken world, this animation shows their intense clash and hints at a bigger story.")'>
+          <video src="Special art/Dissimilar Fight scene.mp4"></video>
+          <div class="play-overlay">&#9658;</div>
+        </div>
+      </div>
+      <div class="gallery"> <!--second section -->
+        <div class="video-thumbnail" onclick='openImageLightbox("Special art/coffee smoke animation.gif", "Coffee lovers", "Coffee smoke animation effects")'>
+          <img src="Special art/coffee smoke animation.gif"></img>
+        </div>
+       <div class="video-thumbnail" onclick='openImageLightbox("Special art/leo_lightning_effects.gif", "Leo", "Lightning power effects")'>
+           <img src="Special art/leo_lightning_effects.gif"></img>
+        </div>
+      </div>
+
+
+      <div id="video-lightbox" class="lightbox" onclick="closeVideoLightbox()">
+        <div class="text-lightbox">
+           <h2 id="video-title"></h2>
+          <p id="video-description"></p>
+          </div>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+          <video id="video-player" controls autoplay muted loop playsinline style="max-width:100%; max-height:80vh;"></video>
+          <div class="close-btn" onclick="closeVideoLightbox()">&times;</div>
+        </div>
+      </div>
+
+  </section>
+  <section id="artist-profile" class="artist-section">
+    <div class="artist-container">
+      <h2 class="artist-heading">Artist Profile</h2>
+      <div class="artist-profile-wrapper">
+        <img src="me/me box.jpg" alt="Lemrish John Belarmino" class="artist-profile-pic">
+      <p class="artist-description">
+        <strong>Lemrish John Belarmino</strong>, also known online as <strong>Lem_milky</strong>, is a passionate visual storyteller who bridges the gap between traditional and digital art. Whether it's ballpoint sketches or vibrant digital illustrations, Lemrish brings each character to life with emotion, detail, and motion.
+        <br><br>
+          Starting with stickman storyboards scribbled in old notebooks, he found his voice through character design and anime fanart. His black-and-white line art often carries a raw, honest energy—while his digital works glow with color, depth, and storytelling. Today, Lemrish continues to explore animation, recently completing an internship at <strong>Rocketsheep Studio</strong>, where he animated background characters in studio productions.
+        <br><br>
+          He’s currently focused on mastering anatomy, deepening his animation skills, and building a portfolio that reflects his growth and ambition. For Lemrish, art isn’t just a passion—it’s a journey of curiosity and motion, driven by the question: <em>“What if this drawing could move?”</em>
+        </p>
+      </div>
+      <div class="artist-icons">
+        <img src="logos/adobe-animate.png" alt="Adobe Animate" title="Adobe Animate">
+        <img src="logos/ibispaint.jpg" alt="ibisPaint X" title="ibisPaint X">
+        <img src="logos/krita1.png" alt="Krita" title="Krita">
+        <img class="capcut" src="logos/capcut.jpg" alt="CapCut" title="CapCut">
+        <img class="figma" src="logos/figma.png" alt="Figma" title="Figma">
+        <img src="logos/canva.jpg" alt="Canva" title="Canva">
+      </div>
+    </div>
+  </section>
+
+
+
+
+       <script>/*dropdown JAVASCRIPT*/
+          const trigger = document.querySelector('.dropdown-trigger');
+          const menu = document.querySelector('.floating-dropdown');
+
+          trigger.addEventListener('mouseenter', () => {
+            const rect = trigger.getBoundingClientRect();
+            const menuWidth = menu.offsetWidth;
+            const screenWidth = window.innerWidth;
+
+            let left = rect.left;
+
+            if (left + menuWidth > screenWidth) {
+              left = screenWidth - menuWidth - 10; // Prevent overflow
+            }
+
+            menu.style.left = `${left}px`;
+            menu.style.top = `${rect.bottom + window.scrollY}px`;
+            menu.style.display = 'block';
+          });
+
+          trigger.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+              if (!menu.matches(':hover')) {
+                menu.style.display = 'none';
+              }
+            }, 100);
+          });
+
+          menu.addEventListener('mouseleave', () => {
+            menu.style.display = 'none';
+          });
+
+          menu.addEventListener('mouseenter', () => {
+            menu.style.display = 'block';
+          });
+        </script>
+        
+        <script> /*Scroll*/
+          const sections = document.querySelectorAll("section[id], footer[id]");
+          const navLinks = document.querySelectorAll(".nav-links a, .floating-dropdown-list a");
+          
+          window.addEventListener("load", () => window.dispatchEvent(new Event("scroll")));
+
+          // Listen for scroll events
+          window.addEventListener("scroll", () => {
+            let current = "";
+            const scrollY = window.pageYOffset;
+
+            sections.forEach((section, index) => {
+              const sectionTop = section.offsetTop - 100;
+              const sectionHeight = section.offsetHeight;
+              
+              if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+              }
+
+              // Optional: if you're near bottom of the page, always highlight the last section
+              if ((window.innerHeight + scrollY) >= document.body.offsetHeight - 50) {
+                current = sections[sections.length - 1].getAttribute("id");
+              }
+            });
+
+            navLinks.forEach(link => {
+              const href = link.getAttribute("href").replace("#", "");
+              const isCollection = link.classList.contains("collection-link");
+
+              if (!isCollection) {
+                link.classList.toggle("active", href === current);
+              }
+            });
+          });
+
+        </script>
+        <script> /*gallery*/
+          function openImageLightbox(src, title, description) {
+            document.getElementById('lightbox-image').src = src;
+            document.getElementById('image-title').textContent = title;
+            document.getElementById('image-description').textContent = description;
+            document.getElementById('image-lightbox').style.display = 'flex';
+          }
+
+          function closeImageLightbox() {
+            document.getElementById('image-lightbox').style.display = 'none';
+            document.getElementById('lightbox-image').src = '';
+          }
+
+          function openVideoLightbox(src, title, description) {
+            const videoPlayer = document.getElementById('video-player');
+            document.getElementById('video-title').textContent = title;
+            document.getElementById('video-description').textContent = description;
+            videoPlayer.src = src;
+            videoPlayer.load();
+            videoPlayer.controls = true;
+            videoPlayer.muted = false;
+            videoPlayer.autoplay = true;
+            videoPlayer.loop = true;
+            videoPlayer.playsInline = true;
+            videoPlayer.play().catch(e => console.warn("Autoplay prevented:", e));
+            document.getElementById('video-lightbox').style.display = 'flex';
+          }
+
+          function closeVideoLightbox() {
+            const videoLightbox = document.getElementById('video-lightbox');
+            const videoPlayer = document.getElementById('video-player');
+            videoLightbox.style.display = 'none';
+            videoPlayer.pause();
+            videoPlayer.src = "";
+          }
+        </script>
+
+        <script> /*contact milky animation*/
+        document.addEventListener('DOMContentLoaded', () => {
+          const image = document.querySelector('.contact-image');
+          const frames = [
+            '/milkyyyy/CONTACT-MILKY1.png',
+            '/milkyyyy/CONTACT-MILKY2.png',
+            '/milkyyyy/CONTACT-MILKY3.png',
+            '/milkyyyy/CONTACT-MILKY4.png',
+            '/milkyyyy/CONTACT-MILKY5.png',
+            '/milkyyyy/CONTACT-MILKY6.png',
+            '/milkyyyy/CONTACT-MILKY7.png',
+            '/milkyyyy/CONTACT-MILKY8.png'
+          ];
+
+          // Preload all frames
+          frames.forEach(src => {
+            const img = new Image();
+            img.src = src;
+          });
+
+          let frameIndex = 0;
+          let interval;
+
+          const wrapper = document.querySelector('.contact-wrapper');
+
+          if (wrapper && image) {
+            wrapper.addEventListener('mouseenter', () => {
+              frameIndex = 0;
+              clearInterval(interval);
+              interval = setInterval(() => {
+                image.src = frames[frameIndex];
+                frameIndex++;
+                if (frameIndex >= frames.length) clearInterval(interval);
+              }, 80);
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+              clearInterval(interval);
+              image.src = frames[0]; // Reset to first frame
+            });
+          }
+        });
+      </script>
+
+
+
+
+        
+
+
+</body>
+  <footer id="contact" class="contact-section">
+    <span class="quote">
+    <p>“Let’s do art together”</p>
+    </span>
+  <div class="contact-wrapper">
+    <img src="/milkyyyy/CONTACT-MILKY1.png" alt="Top Image" class="contact-image">
+    <div class="contact-info">
+      <p>📍 Anolid, Mangaldan, Pangasinan, 2432</p>
+      <p>📞 (+63)‑947‑693‑5005</p>
+     <p>📄 <a href="pdfs/Belarmino-LemrishJohn-CV.pdf" download class="download-btn">Download CV</a></p>
+      <p>📃 <a href="pdfs/LemrishJohnBelarmino_Resume2025.pdf" download class="download-btn">Download Resume</a></p>
+      <div class="social-icons">
+      <a href="https://www.facebook.com/lemrish" target="_blank">
+        <img src="icons/Fbicon.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/lem_milky" target="_blank">
+        <img src="icons/Igicon.png" alt="Instagram" />
+      </a>
+      <a href="https://www.linkedin.com/in/lemrish" target="_blank">
+        <img src="icons/Lnicon.png" alt="LinkedIn" />
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lemrishjohn@gmail.com&su=Let's%20create%20art%20together" target="_blank" rel="noopener noreferrer">
+        <img src="icons/Gmailicon.png" alt="Gmail" />
+      </a>
+    </div>
+    </div>
+  </div>
+    <div class="copyright">
+      <p>
+        &copy; 2025 Lem_milky. All rights reserved.
+      </p>
+      <p>
+        Some works are part of internships and school collaborations and are shown for portfolio purposes only. <br> All rights belong to their respective owners.
+      </p>
+    </div>
+      
+   
+
+  </footer>
+
+</html>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("img").forEach(img => {
+      img.loading ="lazy";
+    });
+  });
+</script>
