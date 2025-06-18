@@ -6,7 +6,6 @@
   <title>Lem_milky | Portfolio</title>
   <link href="milkyyyy/LOGO-MILKY.png" rel="icon" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -197,9 +196,10 @@
     }
 
     .profile-pic {
-      width: 350px;
-      height: 350px;
+      width: 250px;
+      height: 250px;
       object-fit: cover;
+      object-position: center;
       border-radius: 20%;
     }
 
@@ -370,7 +370,7 @@
       position: absolute;
       top: 10px;
       right: 20px;
-      font-size: 28px;
+      font-size: 40px;
       cursor: pointer;
       color: rgba(255, 255, 255, 0.544);
     }
@@ -393,6 +393,16 @@
     }
 
     .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 16/9;
+      display: block;
+      background-color: #000;
+      pointer-events: none;
+    }
+
+    .gif-video-thumbnail img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -427,6 +437,33 @@
         max-width: 90%;
       }
     }
+
+    .youtube-lightbox{
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .yt-lightbox-content {
+      position: relative;
+      background: transparent;
+      aspect-ratio: 16/9;
+      width: 1200px;
+      align-self: flex-start;
+      flex-shrink: 0;
+      margin-top: 0;
+      display: block;
+    }
+
 
 
 /* ------------------------------------------------------------------ARTIST PROFILE --------------------------------------------------------------*/
@@ -694,7 +731,7 @@
       <a href="#artworks">Artworks</a>
       <a href="#animations">Animations</a>
       <a href="#artist-profile">Artist Profile</a>
-      <a href="#blank" class="dropdown-trigger">Collections &#x2335;</a>
+      <a href="#" class="dropdown-trigger" onclick="event.preventDefault()">Collections &#x2335;</a>
     </div>
   </nav>
 
@@ -712,7 +749,7 @@
   </p>
     <button onclick="location.href='#contact'" class="btn">Ink Me a Message</button>
   </div>
-  <img src="me/me blurd box.jpg" alt="Lemrish John Belarmino" class="profile-pic" />
+  <img src="me/me close up.png" alt="Lemrish John Belarmino" class="profile-pic" />
 </section>
 
   <section id="artworks">
@@ -748,6 +785,7 @@
         <img src="Special art/21.kinncloseyes.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/21.kinncloseyes.png", "Kinn Reacher: Eyes Closed", "DISSIMILAR teaser — calm before the storm.")'/>
         <img src="Special art/22.kinnjump.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/22.kinnjump.png", "Kinn Reacher: Leap", "Leaping into destiny — action frame for DISSIMILAR teaser.")'/>
         <img src="Special art/23.kinnsleep.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/23.kinnsleep.png", "Kinn Reacher: Rest", "Every hero rests — final concept art from teaser trailer.")'/>
+        <img src="Special art/shauntrailer.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/shauntrailer.png", "Shaun 1st form", "The Main Antagonist — final concept art from teaser trailer.")'/>
       </div>
       <div id="image-lightbox" class="lightbox" onclick="closeImageLightbox()">
         <div class="text-lightbox">
@@ -786,20 +824,28 @@
         </div>
       </div>
       <div class="gallery"> <!--third section -->
-        <div class="video-thumbnail" onclick='openVideoLightbox("Special art/DISSIMILAR_Trailer.mp4", "DISSIMILAR: Crystal of Destiny - Teaser Trailer", "The first Concept for Dissimilar - Capstone Project 1")'>
-          <video poster="Special art/21.kinncloseyes.png" src="Special art/DISSIMILAR_Trailer.mp4"></video>
-          <div class="play-overlay">&#9658;</div>
-        </div>
-        <div class="video-thumbnail" onclick='openVideoLightbox("Special art/Dissimilar Fight scene.mp4", "DISSIMILAR: Crystal of Destiny - Fight Scene", "A short fight scene between Kinn Reacher, a crystal wielder in blue, and Shaun, a shadowy enemy. Set in a broken world, this animation shows their intense clash and hints at a bigger story.")'>
-          <video src="Special art/Dissimilar Fight scene.mp4"></video>
+        <!-- DISSIMILAR Trailer via YouTube -->
+          <div class="video-thumbnail" onclick='openYouTubeLightbox("https://www.youtube.com/embed/G9On_zUPdus", "DISSIMILAR: Crystal of Destiny - Teaser Trailer", "The first Concept for Dissimilar - Capstone Project 1")'>
+            <img src="Special art/dissimilar trailer.png" alt="Trailer Thumbnail">
+            <div class="play-overlay">&#9658;</div>
+          </div>
+
+        <div class="video-thumbnail" onclick='openYouTubeLightbox("https://www.youtube.com/embed/BTPaHYTw0bM", "DISSIMILAR: Crystal of Destiny - Fight Scene", "A short fight scene between Kinn Reacher, a crystal wielder in blue, and Shaun, a shadowy enemy. Set in a broken world, this animation shows their intense clash and hints at a bigger story.")'>
+          <img src="Special art/DissimilarFightscene.png" alt="Fight Scene Thumbnail">
           <div class="play-overlay">&#9658;</div>
         </div>
       </div>
-      <div class="gallery"> <!--second section -->
-        <div class="video-thumbnail" onclick='openImageLightbox("Special art/coffee smoke animation.gif", "Coffee lovers", "Coffee smoke animation effects")'>
+      <div class="gallery"> <!--fourth section -->
+        <div class="video-thumbnail" onclick='openYouTubeLightbox("https://www.youtube.com/embed/h3h3UZwbGws", "DISSIMILAR and the Crystal of Destiny", "Short Animated Film - Final Capstone Project 2")'>
+          <img src="Special art/TheFinalDissimilar.png">
+          <div class="play-overlay">&#9658;</div>
+        </div>
+      </div>
+      <div class="gif" style=" display: flex; gap: 20px; max-width: 1200px; width: 100%; margin: auto; padding-bottom: 10px; justify-content: center; flex-wrap: wrap; background: transparent;" > <!--fifth section -->
+        <div class="gif-video-thumbnail" style="height: auto; max-width: 400px; aspect-ratio: 4/5; object-fit: cover;" onclick='openImageLightbox("Special art/coffee smoke animation.gif", "Coffee lovers", "Coffee smoke animation effects")'>
           <img src="Special art/coffee smoke animation.gif"></img>
         </div>
-       <div class="video-thumbnail" onclick='openImageLightbox("Special art/leo_lightning_effects.gif", "Leo", "Lightning power effects")'>
+       <div class="gif-video-thumbnail" style="height: auto; max-width: 400px; aspect-ratio: 4/5; object-fit: cover;" onclick='openImageLightbox("Special art/leo_lightning_effects.gif", "Leo", "Lightning power effects")'>
            <img src="Special art/leo_lightning_effects.gif"></img>
         </div>
       </div>
@@ -815,6 +861,18 @@
           <div class="close-btn" onclick="closeVideoLightbox()">&times;</div>
         </div>
       </div>
+      <!-- YouTube Lightbox -->
+      <div id="youtube-lightbox" class="youtube-lightbox" onclick="closeYouTubeLightbox()">
+        <div class="text-lightbox">
+          <h2 id="youtube-title"></h2>
+          <p id="youtube-description"></p>
+        </div>
+        <div class="yt-lightbox-content" onclick="event.stopPropagation()">
+          <iframe id="youtube-player" frameborder="0" allowfullscreen allow="autoplay" style="aspect-ratio: 16/9; height: 100%;"></iframe>
+          <div class="close-btn" onclick="closeYouTubeLightbox()">&times;</div>
+        </div>
+      </div>
+
 
   </section>
   <section id="artist-profile" class="artist-section">
@@ -953,19 +1011,35 @@
             videoPlayer.src = "";
           }
         </script>
+        <script>
+          function openYouTubeLightbox(url, title, description) {
+            const box = document.getElementById("youtube-lightbox");
+            document.getElementById("youtube-player").src = url + "?autoplay=1&rel=0";
+            document.getElementById("youtube-title").textContent = title;
+            document.getElementById("youtube-description").textContent = description;
+            box.style.display = "flex";
+          }
+
+          function closeYouTubeLightbox() {
+            const box = document.getElementById("youtube-lightbox");
+            box.style.display = "none";
+            document.getElementById("youtube-player").src = "";
+          }
+        </script>
+
 
         <script> /*contact milky animation*/
         document.addEventListener('DOMContentLoaded', () => {
           const image = document.querySelector('.contact-image');
           const frames = [
-            '/milkyyyy/CONTACT-MILKY1.png',
-            '/milkyyyy/CONTACT-MILKY2.png',
-            '/milkyyyy/CONTACT-MILKY3.png',
-            '/milkyyyy/CONTACT-MILKY4.png',
-            '/milkyyyy/CONTACT-MILKY5.png',
-            '/milkyyyy/CONTACT-MILKY6.png',
-            '/milkyyyy/CONTACT-MILKY7.png',
-            '/milkyyyy/CONTACT-MILKY8.png'
+            'milkyyyy/CONTACT-MILKY1.png',
+            'milkyyyy/CONTACT-MILKY2.png',
+            'milkyyyy/CONTACT-MILKY3.png',
+            'milkyyyy/CONTACT-MILKY4.png',
+            'milkyyyy/CONTACT-MILKY5.png',
+            'milkyyyy/CONTACT-MILKY6.png',
+            'milkyyyy/CONTACT-MILKY7.png',
+            'milkyyyy/CONTACT-MILKY8.png'
           ];
 
           // Preload all frames
@@ -1010,7 +1084,7 @@
     <p>“Let’s do art together”</p>
     </span>
   <div class="contact-wrapper">
-    <img src="/milkyyyy/CONTACT-MILKY1.png" alt="Top Image" class="contact-image">
+    <img src="milkyyyy/CONTACT-MILKY1.png" alt="Top Image" class="contact-image">
     <div class="contact-info">
       <p>📍 Anolid, Mangaldan, Pangasinan, 2432</p>
       <p>📞 (+63)‑947‑693‑5005</p>

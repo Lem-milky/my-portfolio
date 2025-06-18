@@ -510,7 +510,7 @@
       <a href="index.html#artworks ">Artworks</a>
       <a href="index.html#animations">Animations</a>
       <a href="index.html#artist-profile">Artist Profile</a>
-      <a href="#" class="dropdown-trigger">Collections &#x2335;</a>
+      <a href="" class="dropdown-trigger" onclick="event.preventDefault()">Collections &#x2335;</a>
     </div>
   </nav>
 
@@ -520,10 +520,6 @@
   </div>
 
   <section>
-  <!-- <section class="artwork-header">
-      <img src="milkyyyy/ART-MILKY.png" alt="Art Placeholder" class="milky">
-      <h2>Illustrations</h2>
-    </section> -->
   <div class="image-container">
     <div class="title">
       <h2>Character Design</h2>
@@ -668,10 +664,6 @@
 
     
       <div id="image-lightbox" class="lightbox" onclick="closeImageLightbox()">
-     <!--  <div class="text-lightbox">
-           <h2 id="image-title"></h2>
-          <p id="image-description"></p>
-        </div> --> 
         <div class="lightbox-content" onclick="event.stopPropagation()">
           <img id="lightbox-image" src="" alt="">
         </div>
@@ -755,8 +747,6 @@
         <script> /*gallery*/
           function openImageLightbox(src, title, description) {
             document.getElementById('lightbox-image').src = src;
-        /*  document.getElementById('image-title').textContent = title;
-            document.getElementById('image-description').textContent = description;  */
             document.getElementById('image-lightbox').style.display = 'flex';
           }
 
@@ -764,45 +754,21 @@
             document.getElementById('image-lightbox').style.display = 'none';
             document.getElementById('lightbox-image').src = '';
           }
-/*
-          function openVideoLightbox(src, title, description) {
-            const videoPlayer = document.getElementById('video-player');
-            document.getElementById('video-title').textContent = title;
-            document.getElementById('video-description').textContent = description;
-            videoPlayer.src = src;
-            videoPlayer.load();
-            videoPlayer.controls = true;
-            videoPlayer.muted = false;
-            videoPlayer.autoplay = true;
-            videoPlayer.loop = true;
-            videoPlayer.playsInline = true;
-            videoPlayer.play().catch(e => console.warn("Autoplay prevented:", e));
-            document.getElementById('video-lightbox').style.display = 'flex';
-          }
 
-          function closeVideoLightbox() {
-            const videoLightbox = document.getElementById('video-lightbox');
-            const videoPlayer = document.getElementById('video-player');
-            videoLightbox.style.display = 'none';
-            videoPlayer.pause();
-            videoPlayer.src = "";
-          }
-
-        */
         </script>
 
         <script> /*contact milky animation*/
         document.addEventListener('DOMContentLoaded', () => {
           const image = document.querySelector('.contact-image');
           const frames = [
-            '/milkyyyy/CONTACT-MILKY1.png',
-            '/milkyyyy/CONTACT-MILKY2.png',
-            '/milkyyyy/CONTACT-MILKY3.png',
-            '/milkyyyy/CONTACT-MILKY4.png',
-            '/milkyyyy/CONTACT-MILKY5.png',
-            '/milkyyyy/CONTACT-MILKY6.png',
-            '/milkyyyy/CONTACT-MILKY7.png',
-            '/milkyyyy/CONTACT-MILKY8.png'
+            'milkyyyy/CONTACT-MILKY1.png',
+            'milkyyyy/CONTACT-MILKY2.png',
+            'milkyyyy/CONTACT-MILKY3.png',
+            'milkyyyy/CONTACT-MILKY4.png',
+            'milkyyyy/CONTACT-MILKY5.png',
+            'milkyyyy/CONTACT-MILKY6.png',
+            'milkyyyy/CONTACT-MILKY7.png',
+            'milkyyyy/CONTACT-MILKY8.png'
           ];
 
           // Preload all frames
@@ -898,7 +864,7 @@
     <p>“Let’s do art together”</p>
     </span>
   <div class="contact-wrapper">
-    <img src="/milkyyyy/CONTACT-MILKY1.png" alt="Top Image" class="contact-image">
+    <img src="milkyyyy/CONTACT-MILKY1.png" alt="Top Image" class="contact-image">
     <div class="contact-info">
       <p>📍 Anolid, Mangaldan, Pangasinan, 2432</p>
       <p>📞 (+63)‑947‑693‑5005</p>
