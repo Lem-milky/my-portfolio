@@ -28,8 +28,38 @@
     img, video {
       -webkit-user-drag: none;
     }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.75rem; /* 28px */
+      }
+
+      h2 {
+        font-size: 1.5rem; /* 24px */
+      }
+
+      h3 {
+        font-size: 1.25rem; /* 20px */
+      }
+
+      h4 {
+        font-size: 1.125rem; /* 18px */
+      }
+
+      body,
+      p, a, li, span {
+        font-size: 0.9375rem; /* 15px */
+      }
+
+      .small {
+        font-size: 0.8125rem; /* 13px */
+      }
+
+      .caption {
+        font-size: 0.6875rem; /* 11px */
+      }
+    }
 /* ------------------------------------------------------------------NAVBAR--------------------------------------------------------------*/
-     nav {
+      nav {
       position: fixed;
       top: 0;
       left: 0;
@@ -56,6 +86,12 @@
       justify-content: center;
     }
 
+    .logo img{
+      width: 40px;
+      height: 40px; 
+      border-radius: 50%;
+    }
+
     .logo-wrapper {
       display: flex;
       align-items: center;
@@ -76,6 +112,11 @@
       font-size: 20px;
     }
 
+    .hamburger {
+      display: none;
+    }
+
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -94,23 +135,6 @@
 
     .nav-links a:hover {
       color: #444;
-    }
-
-
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        margin-top: 10px;
-      }
     }
 
    .floating-dropdown {
@@ -142,6 +166,79 @@
       font-weight: bold;
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) { /*navbbar*/
+        .logo, .logo img {
+          width: 30px;
+          height: 30px;
+        }
+        .logo-burger {
+          display: flex;
+          justify-content: space-between; /* Push logo left and hamburger right */
+          align-items: center;
+          width: 100%; /* Ensure it spans the full navbar width */
+          margin-bottom: 10px;
+        }
+
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 16px 20px;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: #000000;
+          line-height: 1.6;
+          font-size: 0.9375rem;
+        }
+
+        .floating-dropdown {
+          margin-top: 10px;
+          left: 20px !important; /* override horizontal position */
+          position: absolute;
+          width: 90%; /* takes almost full width */
+          max-width: auto;
+        }
+
+        .floating-dropdown a {
+          padding: 10px 20px;
+          font-size: 0.8125rem;
+        }
+        .hamburger {
+          display: block;
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          color: black;
+          padding: 8px;
+          outline: none;
+        }
+
+        .hamburger:focus,
+        .hamburger:active {
+          background: none;        /* Prevent black background */
+          outline: none;
+          box-shadow: none;        /* Prevents any shadow effect */
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: row;
+          align-items: flex-start;
+          width: 100%;
+          background: white;
+          padding: 10px 0;
+          border-top: 1px solid #ccc;
+          gap: 25px;
+        }
+
+        .nav-links.show {
+          display: flex;
+        }
+      }
+
 /* ------------------------------------------------------------------GALLERY--------------------------------------------------------------*/
 
     
@@ -383,15 +480,68 @@
     }
 
     @media (max-width: 768px) {
-      .lightbox {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .lightbox-content, .text-lightbox {
-        max-width: 90%;
-      }
+    .gallery, .horizontal-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Two columns */
+      gap: 10px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0;
+      
     }
+
+    .gallery img,
+    .horizontal-gallery img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ccc;
+      margin-left: 0;
+    }
+
+    .image-container {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .lightbox {
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      max-width: 95vw;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 100vh;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .close-btn {
+      top: 8px;
+      right: 16px;
+      font-size: 28px;
+    }
+  }
+
+
+
 
 /* ------------------------------------------------------------------CONTACT--------------------------------------------------------------*/
 
@@ -456,7 +606,6 @@
       justify-content: left;
       display: flex;
       align-items: left;
-      gap: 40px;
       position: relative;
       transition: transform 0.3s ease;
     }
@@ -487,8 +636,33 @@
       font-family: Arial, Helvetica, sans-serif;
       color: #777;
       text-align: center;
-      align-items: end;
+      align-items: center;
     }
+
+     @media screen and (max-width: 768px){
+
+    .contact-section{
+        height: 560px;
+        width: 95vw;
+      }
+      .contact-wrapper{
+        flex-direction: column;
+        gap: none;
+      }
+      .quote p{
+        font-size: 1.75rem;
+      }
+      .contact-image{
+        width: 95px;
+        height: 95px;
+      }
+      .copyright{
+        margin-top: 50px;
+        margin-bottom: 0px;
+        font-size: 0.8125rem;
+      }
+
+     }
     
     
     
@@ -498,14 +672,17 @@
 </head>
 <body>
   <nav>
+    <div class="logo-burger">
     <div class="logo-wrapper">
       <div class="logo">
-        <img src="milkyyyy/LOGO-MILKY.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%;">
+        <img src="milkyyyy/LOGO-MILKY.png" alt="Logo" >
       </div>
       <span class="logo-text">Illustrations</span>
     </div>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()">☰</button> <!-- Hamburger Icon -->
+    </div>
 
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="index.html#home">Home</a>
       <a href="index.html#artworks ">Artworks</a>
       <a href="index.html#animations">Animations</a>
@@ -519,7 +696,7 @@
       <a href="cert.html">Certificates</a>
   </div>
 
-  <section>
+  <section><!--illustrations-->
   <div class="image-container">
     <div class="title">
       <h2>Character Design</h2>
@@ -590,7 +767,7 @@
         <img src="Art/digital/Elemental Earth.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Elemental Earth.png")'/>
         <img src="Art/digital/Elemental Water.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Elemental Water.png")'/>
         <img src="Art/digital/Dissimilar 2nd concept poster.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Dissimilar 2nd concept poster.png")'/>
-        <img src="Art/digital/Dissimilar 1st concept poster.png" style="aspect-ratio: 1 / 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Dissimilar 1st concept poster.png")'/>
+        <img src="Art/digital/Dissimilar 1st concept poster.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Dissimilar 1st concept poster.png")'/>
         <img src="Art/digital/Alucaria story.jpg" style="aspect-ratio: 1 / 1; align-self: start;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Alucaria story.jpg")'/>
           <img src="Art/digital/Alucaria map.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Alucaria map.png")'/>
           <img src="Art/digital/redparadise.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/redparadise.png")'/>
@@ -670,6 +847,45 @@
       </div>
 
   </section>
+  <footer id="contact" class="contact-section">
+    <span class="quote">
+    <p>“Let’s do art together”</p>
+    </span>
+  <div class="contact-wrapper">
+    <img src="milkyyyy/CONTACT-MILKY1.png" alt="Top Image" class="contact-image">
+    <div class="contact-info">
+      <p>📍 Anolid, Mangaldan, Pangasinan, 2432</p>
+      <p>📞 (+63)‑947‑693‑5005</p>
+      <p>📄 <a href="pdfs/Belarmino-LemrishJohn-CV.pdf" download class="download-btn">Download CV</a></p>
+      <p>📃 <a href="pdfs/LemrishJohnBelarmino_Resume2025.pdf" download class="download-btn">Download Resume</a></p>
+      <div class="social-icons">
+      <a href="https://www.facebook.com/lemrish" target="_blank">
+        <img src="icons/Fbicon.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/lem_milky" target="_blank">
+        <img src="icons/Igicon.png" alt="Instagram" />
+      </a>
+      <a href="https://www.linkedin.com/in/lemrish" target="_blank">
+        <img src="icons/Lnicon.png" alt="LinkedIn" />
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lemrishjohn@gmail.com&su=Let's%20create%20art%20together" target="_blank" rel="noopener noreferrer">
+        <img src="icons/Gmailicon.png" alt="Gmail" />
+      </a>
+    </div>
+    </div>
+  </div>
+    <div class="copyright">
+      <p>
+        &copy; 2025 Lem_milky. All rights reserved.
+      </p>
+      <p>
+        Some works are part of internships and school collaborations and are shown for portfolio purposes only. <br> All rights belong to their respective owners.
+      </p>
+    </div>
+      
+   
+
+  </footer>
 
        <script>/*dropdown JAVASCRIPT*/
           const trigger = document.querySelector('.dropdown-trigger');
@@ -800,104 +1016,23 @@
           }
         });
       </script>
-      <script>
-          const scrollContainer = document.getElementById('scrollArea');
-
-          // Scroll by button
-          function scrollLeft() {
-            scrollContainer.scrollBy({
-              left: -300,
-              behavior: 'smooth'
-            });
-          }
-
-          function scrollRight() {
-            scrollContainer.scrollBy({
-              left: 300,
-              behavior: 'smooth'
-            });
-          }
-
-          // Drag to scroll
-          let isDown = false;
-          let startX;
-          let scrollLeftStart;
-
-          scrollContainer.addEventListener('mousedown', (e) => {
-            isDown = true;
-            scrollContainer.classList.add('active');
-            startX = e.pageX - scrollContainer.offsetLeft;
-            scrollLeftStart = scrollContainer.scrollLeft;
-          });
-
-          scrollContainer.addEventListener('mouseleave', () => {
-            isDown = false;
-            scrollContainer.classList.remove('active');
-          });
-
-          scrollContainer.addEventListener('mouseup', () => {
-            isDown = false;
-            scrollContainer.classList.remove('active');
-          });
-
-          scrollContainer.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - scrollContainer.offsetLeft;
-            const walk = (x - startX) * 2; // Speed multiplier
-            scrollContainer.scrollLeft = scrollLeftStart - walk;
-          });
-        </script>
-
-
-
-
-
-
-
-        
-
-
-</body>
-  <footer id="contact" class="contact-section">
-    <span class="quote">
-    <p>“Let’s do art together”</p>
-    </span>
-  <div class="contact-wrapper">
-    <img src="milkyyyy/CONTACT-MILKY1.png" alt="Top Image" class="contact-image">
-    <div class="contact-info">
-      <p>📍 Anolid, Mangaldan, Pangasinan, 2432</p>
-      <p>📞 (+63)‑947‑693‑5005</p>
-      <p>📄 <a href="pdfs/Belarmino-LemrishJohn-CV.pdf" download class="download-btn">Download CV</a></p>
-      <p>📃 <a href="pdfs/LemrishJohnBelarmino_Resume2025.pdf" download class="download-btn">Download Resume</a></p>
-      <div class="social-icons">
-      <a href="https://www.facebook.com/lemrish" target="_blank">
-        <img src="icons/Fbicon.png" alt="Facebook" />
-      </a>
-      <a href="https://www.instagram.com/lem_milky" target="_blank">
-        <img src="icons/Igicon.png" alt="Instagram" />
-      </a>
-      <a href="https://www.linkedin.com/in/lemrish" target="_blank">
-        <img src="icons/Lnicon.png" alt="LinkedIn" />
-      </a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lemrishjohn@gmail.com&su=Let's%20create%20art%20together" target="_blank" rel="noopener noreferrer">
-        <img src="icons/Gmailicon.png" alt="Gmail" />
-      </a>
-    </div>
-    </div>
-  </div>
-    <div class="copyright">
-      <p>
-        &copy; 2025 Lem_milky. All rights reserved.
-      </p>
-      <p>
-        Some works are part of internships and school collaborations and are shown for portfolio purposes only. <br> All rights belong to their respective owners.
-      </p>
-    </div>
       
-   
+        <script>
+        function toggleMenu() {
+          const navLinks = document.getElementById("navLinks");
+          const hamburger = document.getElementById("hamburgerBtn");
 
-  </footer>
+          navLinks.classList.toggle("show");
+
+          // Change icon when open
+          if (navLinks.classList.contains("show")) {
+            hamburger.textContent = "✖"; // Close icon
+          } else {
+            hamburger.textContent = "☰"; // Hamburger icon
+          }
+        }
+      </script>
+</body>
 
 </html>
 <script>
