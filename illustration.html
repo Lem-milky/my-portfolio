@@ -304,6 +304,30 @@
       
     }
 
+    .gallery-ui {
+      width: 85%;
+      margin: auto;
+      padding: 10px;
+      justify-self: center;
+      flex-wrap: wrap;
+    }
+
+    .gallery-ui img {
+      width: 236.5px;
+      height: auto;
+      aspect-ratio: 45/32;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: contain;
+      flex: 2; 
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border: 2px solid #ddd;
+      margin-left: 10px;
+      
+    }
+
     .gallery img:hover {
       transform: scale(1.01);
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -480,7 +504,7 @@
     }
 
     @media (max-width: 768px) {
-    .gallery, .horizontal-gallery {
+    .gallery, .horizontal-gallery, .gallery-ui {
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* Two columns */
       gap: 10px;
@@ -491,7 +515,8 @@
     }
 
     .gallery img,
-    .horizontal-gallery img {
+    .horizontal-gallery img, 
+    .gallery-ui img {
       width: 100%;
       max-width: 100%;
       height: auto;
@@ -684,9 +709,14 @@
 
     <div class="nav-links" id="navLinks">
       <a href="index.html#home">Home</a>
-      <a href="index.html#artworks ">Artworks</a>
-      <a href="index.html#animations">Animations</a>
-      <a href="index.html#artist-profile">Artist Profile</a>
+      <a href="#cd">Character Design</a>
+      <a href="#ic">Comic</a>
+      <a href="#sb">Storyboard</a>
+      <a href="#di">Digital</a>
+      <a href="#gd">Graphic Design</a>
+      <a href="#ws">UI/UX</a>
+      <a href="#hd">Hand-Drawn</a>
+      <a href="#pt">Portraits</a>
       <a href="" class="dropdown-trigger" onclick="event.preventDefault()">Collections &#x2335;</a>
     </div>
   </nav>
@@ -696,8 +726,8 @@
       <a href="cert.html">Certificates</a>
   </div>
 
-  <section><!--illustrations-->
-  <div class="image-container">
+  <section  id="cd"><!--character design-->
+  <div class="image-container" >
     <div class="title">
       <h2>Character Design</h2>
     </div>  
@@ -711,10 +741,13 @@
         <img src="Art/chardesign/shaun emotion.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/shaun emotion.png")'/>
         <img src="Art/chardesign/austin emotion.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/austin emotion.png")'/>
         <img src="Art/chardesign/kiara emotion.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/kiara emotion.png")'/>
+        <img src="Art/chardesign/milkyblob.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/milkyblob.png")'/>
         <img src="Art/chardesign/chrislarasCD.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/chrislarasCD.png")'/>
       </div>
   </div>
-  <div class="image-container">
+  </section>
+  <section id="ic"><!--inktober comic-->
+  <div class="image-container" >
     <div class="title">
       <h2>Inktober Comic</h2>
     </div>
@@ -727,11 +760,14 @@
         <img src="Art/comic/inktober_6.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Art/comic/inktober_6.jpg")'/>
       </div>
   </div>
-  <div class="image-container">
+  </section>
+  <section id="sb"><!--storyboard-->
+  <div class="image-container" >
     <div class="title">
       <h2>Storyboards</h2>
     </div>
       <div class="gallery">
+        <img src="Art/storyboard/milkyblob Storyboard.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/milkyblob Storyboard.png")'/>
         <img src="Art/storyboard/page 1.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 1.png")'/>
         <img src="Art/storyboard/page 2.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 2.png")'/>
         <img src="Art/storyboard/page 3.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 3.png")'/>
@@ -752,7 +788,9 @@
         <img src="Art/storyboard/page 18.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 18.png")'/>
       </div>
   </div>
-   <div class="image-container">
+  </section>
+  <section id="di"><!--digital illustration -->
+   <div class="image-container" >
     <div class="title">
       <h2>Digital Illustrations</h2>
     </div>
@@ -768,13 +806,16 @@
         <img src="Art/digital/Elemental Water.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Elemental Water.png")'/>
         <img src="Art/digital/Dissimilar 2nd concept poster.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Dissimilar 2nd concept poster.png")'/>
         <img src="Art/digital/Dissimilar 1st concept poster.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Dissimilar 1st concept poster.png")'/>
-        <img src="Art/digital/Alucaria story.jpg" style="aspect-ratio: 1 / 1; align-self: start;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Alucaria story.jpg")'/>
-          <img src="Art/digital/Alucaria map.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Alucaria map.png")'/>
-          <img src="Art/digital/redparadise.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/redparadise.png")'/>
-          <img src="Art/digital/kinn&shaun faceoff.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/kinn&shaun faceoff.png")'/>
+        <img src="Art/digital/Alucaria map.png" style="aspect-ratio: 1/ 1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Alucaria map.png")'/>
+        <img src="Art/digital/Alucaria story.jpg" style="aspect-ratio: 5/4; width: 295px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Alucaria story.jpg")'/>
+        <img src="Art/digital/redparadise.png" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/redparadise.png")'/>
+        <img src="Art/digital/kinn&shaun faceoff.png" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/kinn&shaun faceoff.png")'/>
+        <img src="Art/digital/milkyblob single panel.png" style="aspect-ratio: 5/4; width: 295px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/milkyblob single panel.png")'/>
        </div>
   </div>
-  <div class="image-container">
+  </section>
+  <section id="gd"><!--graphic design-->
+  <div class="image-container" >
     <div class="title">
       <h2>Graphic Design</h2>
     </div>
@@ -790,11 +831,59 @@
         <img src="Art/logos/9.Alucaria osinu.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/9.Alucaria osinu.png")'/>
         <img src="Art/logos/10.Alucaria philgako.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/10.Alucaria philgako.png")'/>
         <img src="Art/logos/11.Alucaria Vilkara.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/11.Alucaria Vilkara.png")'/>
-        <img src="Art/logos/12.Alucaria logo.jpg" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/12.Alucaria logo.jpg")'/>
-        <img src="Art/logos/13.DissimilarPoster.png" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/13.DissimilarPoster.png")'/>
+        <img src="Art/logos/12.book.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/12.book.png")'/>
+        <img src="Art/logos/13.thumbnail book.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/13.thumbnail book.png")'/>
+        <img src="Art/logos/14.resumeplus.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/14.resumeplus.png")'/>
+        <img src="Art/logos/15.resumeplus logo text.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/15.resumeplus logo text.png")'/>
+        <img src="Art/logos/16.4th anniv.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/16.4th anniv.png")'/>
+        <img src="Art/logos/17.jbwf4 logo.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/17.jbwf4 logo.png")'/>
+        <img src="Art/logos/18.jbwf logo.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/18.jbwf logo.png")'/>
+        <img src="Art/logos/19.ukay.png" style="aspect-ratio: 5/4; width: 295px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/19.ukay.png")'/>
+        <img src="Art/logos/20.Alucaria logo.jpg" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/20.Alucaria logo.jpg")'/>
+        <img src="Art/logos/21.DissimilarPoster.png" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/21.DissimilarPoster.png")'/>
       </div>
   </div>
-  <div class="image-container">
+  </section>
+   <section id="ws"><!--ui/ux design-->
+  <div class="image-container" >
+    <div class="title">
+      <h2>UI/UX Design</h2>
+    </div>
+      <div class="gallery-ui">
+     
+          <img src="Art/UI/client/1.Desktop - Login.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/1.Desktop - Login.png")'/>
+          <img src="Art/UI/client/2.Desktop - SignUp.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/2.Desktop - SignUp.png")'/>
+          <img src="Art/UI/client/3.Desktop - Homepage.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/3.Desktop - Homepage.png")'/>
+          <img src="Art/UI/client/4.Desktop - Cart.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/4.Desktop - Cart.png")'/>
+          <img src="Art/UI/client/5.Desktop - History page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/5.Desktop - History page.png")'/>
+          <img src="Art/UI/client/6.Desktop - My order Done page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/6.Desktop - My order Done page.png")'/>
+          <img src="Art/UI/client/7.Desktop - My order On Progress page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/7.Desktop - My order On Progress page.png")'/>
+          <img src="Art/UI/client/8.Desktop - My order page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/8.Desktop - My order page.png")'/>
+          <img src="Art/UI/client/9.Desktop - Setting page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/9.Desktop - Setting page.png")'/>
+          <img src="Art/UI/client/10.Desktop - About us page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/10.Desktop - About us page.png")'/>
+          <img src="Art/UI/client/11.Desktop - Contact us page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/11.Desktop - Contact us page.png")'/>
+          <img src="Art/UI/client/12.Desktop - Profile page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/12.Desktop - Profile page.png")'/>
+          <img src="Art/UI/client/13.Desktop - Selected Product Page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/13.Desktop - Selected Product Page.png")'/>
+          <img src="Art/UI/client/14.Desktop - Payment page.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/14.Desktop - Payment page.png")'/>
+          <img src="Art/UI/client/15.Desktop - Payment page order Succesful.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/client/15.Desktop - Payment page order Succesful.png")'/>
+       
+          <img src="Art/UI/admin/1.admin Product management.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/admin/1.admin Product management.png")'/>
+          <img src="Art/UI/admin/2.admin order management new orders.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/admin/2.admin order management new orders.png")'/>
+          <img src="Art/UI/admin/3.admin order management in order progress.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/admin/3.admin order management in order progress.png")'/>
+          <img src="Art/UI/admin/4.Admin add Product.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/admin/4.Admin add Product.png")'/>
+          <img src="Art/UI/admin/5.edit.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/admin/5.edit.png")'/>
+          <img src="Art/UI/admin/6.admin Setting.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/admin/6.admin Setting.png")'/>
+        
+          <img src="Art/UI/portfolio/1.Simple portfolio.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/portfolio/1.Simple portfolio.png")'/>
+          <img src="Art/UI/portfolio/2.animation.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/portfolio/2.animation.png")'/>
+          <img src="Art/UI/portfolio/3.artwork.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/UI/portfolio/3.artwork.png")'/>
+
+       </div>
+      </div>
+  </div>
+  </section>
+  <section id="hd"><!--hand drawns-->
+  <div class="image-container" id="hd">
     <div class="title">
       <h2>Hand-Drawn</h2>
     </div>
@@ -815,7 +904,9 @@
         <img src="Art/traditional/14.Aot.jpg" style="aspect-ratio: 1.414 / 1; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/traditional/14.Aot.jpg")'/>
       </div>
   </div>
-  <div class="image-container">
+  </section>
+  <section id="pt"><!--portraits-->
+  <div class="image-container" id="pt">
     <div class="title">
       <h2>Portraits</h2>
     </div>
@@ -836,6 +927,7 @@
         <img src="Art/personal/14.Fampic.png" style="aspect-ratio: 1.414 / 1; width: 419px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/14.Fampic.png")'/>
       </div>
   </div>
+  </section>
 
 
 
