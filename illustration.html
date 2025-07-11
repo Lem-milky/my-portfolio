@@ -351,16 +351,15 @@
     }
 
     .horizontal-gallery img {
-      border-radius: 10px;
       width: 300px;
       height: auto;
       aspect-ratio: 1.414 / 1;
       margin-bottom: 10px;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       object-fit: cover;
       flex: 2; /* makes images take equal space */
       transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       cursor: pointer;
       border: 2px solid #ddd;
       margin-left: 10px;
@@ -375,18 +374,32 @@
       border-top: 2px solid #ddd;
     }
 
+    .gallery-vid{
+      display: flex;
+      gap: 20px; /* space between images */
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding-bottom: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-  /*  .gallery video {
+
+    .gallery-vid video {
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       flex: 1 1 300px;
       cursor: pointer;
       width: 50px;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+      
     }
 
-    .gallery video:hover {
+    .gallery-vid video:hover {
+      transform: scale(1.01);
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }*/
+    }
     
     .lightbox{
       display: none;
@@ -423,8 +436,18 @@
       margin: 0 auto;
       object-fit: contain;
     }
+    
+    .lightbox-content video{
+      display: block;
+      max-height: 100vh;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      margin: 0 auto;
+      object-fit: contain;
+    }
 
-    .text-lightbox {
+/*    .text-lightbox {
       background: #00000021;
       box-sizing: border-box;
       width: 300px;
@@ -450,7 +473,7 @@
       text-align: right;
       word-break: break-word;
       overflow-wrap: break-word;
-    }
+    }*/
 
     .close-btn{
       position: absolute;
@@ -463,26 +486,46 @@
 
     .video-thumbnail {
       position: relative;
-      display: inline-block;
-      width: 48%;
+      display: flex;
+      width: 100%;
+      max-width: 585px;
+      height: auto;
       overflow: hidden;
       cursor: pointer;
+      border-radius: 12px;
+      border: 2px solid #ddd;
+      transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .video-thumbnail:hover {
+      transform: scale(1.01);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
     .video-thumbnail video {
-      width: 100%;
+     /* width: 100%;
       height: 100%;
       object-fit: cover;
       aspect-ratio: 16 / 9;
       display: block;
       pointer-events: none;
+      border: 2px solid #ddd;*/
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: contain;
+      flex: 2; /* makes images take equal space */
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .video-thumbnail img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 16/9;
       display: block;
       background-color: #000;
       pointer-events: none;
@@ -494,17 +537,17 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 48px;
-      color: rgba(255, 255, 255, 0.387);
+      color: rgba(135, 135, 135, 0.705);
       pointer-events: none;
       transition: color 0.3s ease;
     }
 
     .video-thumbnail:hover .play-overlay{
-      color: rgb(255, 255, 255);
+      color: rgba(202, 202, 202, 0.804);
     }
 
     @media (max-width: 768px) {
-    .gallery, .horizontal-gallery, .gallery-ui {
+    .gallery, .horizontal-gallery, .gallery-ui{
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* Two columns */
       gap: 10px;
@@ -513,15 +556,51 @@
       padding: 0;
       
     }
+    
+    .video-thumbnail {
+      position: relative;
+      display: flex;
+      width: 100%;
+      max-width: 585px;
+      height: auto;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 12px;
+      border: 2px solid #ddd;
+      transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .video-thumbnail video{
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: contain;
+      flex: 2; /* makes images take equal space */
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-vid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      gap: 10px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0;
+    }
+    
 
     .gallery img,
     .horizontal-gallery img, 
-    .gallery-ui img {
+    .gallery-ui img,
+    .gallery-vid video {
       width: 100%;
       max-width: 100%;
-      height: auto;
+      height: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border: 1px solid #ccc;
       margin-left: 0;
     }
@@ -552,6 +631,13 @@
     }
 
     .lightbox-content img {
+      max-width: 100%;
+      max-height: 100vh;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .lightbox-content video {
       max-width: 100%;
       max-height: 100vh;
       margin: 0 auto;
@@ -710,6 +796,7 @@
     <div class="nav-links" id="navLinks">
       <a href="index.html#home">Home</a>
       <a href="#cd">Character Design</a>
+      <a href="#am">Animation</a>
       <a href="#ic">Comic</a>
       <a href="#sb">Storyboard</a>
       <a href="#di">Digital</a>
@@ -720,11 +807,11 @@
       <a href="" class="dropdown-trigger" onclick="event.preventDefault()">Collections &#x2335;</a>
     </div>
   </nav>
-
   <div class="floating-dropdown">
       <a href="illustration.html">Illustrations</a>
       <a href="cert.html">Certificates</a>
   </div>
+<section><!--gallery-->
 
   <section  id="cd"><!--character design-->
   <div class="image-container" >
@@ -745,6 +832,23 @@
         <img src="Art/chardesign/chrislarasCD.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/chardesign/chrislarasCD.png")'/>
       </div>
   </div>
+  </section>
+  <section id="am"><!--animation-->
+     <div class="image-container" >
+    <div class="title">
+      <h2>Animation</h2>
+    </div>
+    <div class="gallery-vid"> <!--first section -->
+       <div class="video-thumbnail" onclick='openVideoLightbox("Art/anim/milkyblobwalkcycle.mp4")'>
+          <video src="Art/anim/milkyblobwalkcycle.mp4"></video>
+          <div class="play-overlay">&#9658;</div>
+        </div>
+       <div class="video-thumbnail" onclick='openVideoLightbox("Art/anim/mail box.mp4")'>
+          <video src="Art/anim/mail box.mp4"></video>
+          <div class="play-overlay">&#9658;</div>
+        </div>
+      </div>
+      </div>
   </section>
   <section id="ic"><!--inktober comic-->
   <div class="image-container" >
@@ -768,24 +872,24 @@
     </div>
       <div class="gallery">
         <img src="Art/storyboard/milkyblob Storyboard.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/milkyblob Storyboard.png")'/>
-        <img src="Art/storyboard/page 1.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 1.png")'/>
-        <img src="Art/storyboard/page 2.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 2.png")'/>
-        <img src="Art/storyboard/page 3.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 3.png")'/>
-        <img src="Art/storyboard/page 4.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 4.png")'/>
-        <img src="Art/storyboard/page 5.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 5.png")'/>
-        <img src="Art/storyboard/page 6.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 6.png")'/>
-        <img src="Art/storyboard/page 7.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 7.png")'/>
-        <img src="Art/storyboard/page 8.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 8.png")'/>
-        <img src="Art/storyboard/page 9.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 9.png")'/>
-        <img src="Art/storyboard/page 10.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 10.png")'/>
-        <img src="Art/storyboard/page 11.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 11.png")'/>
-        <img src="Art/storyboard/page 12.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 12.png")'/>
-        <img src="Art/storyboard/page 13.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 13.png")'/>
-        <img src="Art/storyboard/page 14.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 14.png")'/>
-        <img src="Art/storyboard/page 15.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 15.png")'/>
-        <img src="Art/storyboard/page 16.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 16.png")'/>
-        <img src="Art/storyboard/page 17.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 17.png")'/>
-        <img src="Art/storyboard/page 18.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page 18.png")'/>
+        <img src="Art/storyboard/page-1.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-1.png")'/>
+        <img src="Art/storyboard/page-2.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-2.png")'/>
+        <img src="Art/storyboard/page-3.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-3.png")'/>
+        <img src="Art/storyboard/page-4.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-4.png")'/>
+        <img src="Art/storyboard/page-5.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-5.png")'/>
+        <img src="Art/storyboard/page-6.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-6.png")'/>
+        <img src="Art/storyboard/page-7.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-7.png")'/>
+        <img src="Art/storyboard/page-8.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-8.png")'/>
+        <img src="Art/storyboard/page-9.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-9.png")'/>
+        <img src="Art/storyboard/page-10.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-10.png")'/>
+        <img src="Art/storyboard/page-11.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-11.png")'/>
+        <img src="Art/storyboard/page-12.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-12.png")'/>
+        <img src="Art/storyboard/page-13.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-13.png")'/>
+        <img src="Art/storyboard/page-14.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-14.png")'/>
+        <img src="Art/storyboard/page-15.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-15.png")'/>
+        <img src="Art/storyboard/page-16.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-16.png")'/>
+        <img src="Art/storyboard/page-17.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-17.png")'/>
+        <img src="Art/storyboard/page-18.png" alt="Gallery Image 1"  onclick='openImageLightbox("Art/storyboard/page-18.png")'/>
       </div>
   </div>
   </section>
@@ -795,11 +899,6 @@
       <h2>Digital Illustrations</h2>
     </div>
       <div class="gallery">
-        <img src="Art/digital/1. Anime Eyes.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/1. Anime Eyes.png")'/>
-        <img src="Art/digital/2. Head angles.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/2. Head angles.png")'/>
-        <img src="Art/digital/3. Gesture Drawing.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/3. Gesture Drawing.png")'/>
-        <img src="Art/digital/4. Hairstyles.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/4. Hairstyles.png")'/>
-        <img src="Art/digital/5. Hands.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/5. Hands.png")'/>
         <img src="Art/digital/Spiderghost color.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Spiderghost color.png")'/>
         <img src="Art/digital/Elemental fire.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Elemental fire.png")'/>
         <img src="Art/digital/Elemental Earth.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/digital/Elemental Earth.png")'/>
@@ -838,7 +937,6 @@
         <img src="Art/logos/16.4th anniv.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/16.4th anniv.png")'/>
         <img src="Art/logos/17.jbwf4 logo.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/17.jbwf4 logo.png")'/>
         <img src="Art/logos/18.jbwf logo.png" style="aspect-ratio: 1/1;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/18.jbwf logo.png")'/>
-        <img src="Art/logos/19.ukay.png" style="aspect-ratio: 5/4; width: 295px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/19.ukay.png")'/>
         <img src="Art/logos/20.Alucaria logo.jpg" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/20.Alucaria logo.jpg")'/>
         <img src="Art/logos/21.DissimilarPoster.png" style="aspect-ratio: 16/9; width: 420px;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/logos/21.DissimilarPoster.png")'/>
       </div>
@@ -917,7 +1015,6 @@
         <img src="Art/personal/4.lemtinedigi1.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/4.lemtinedigi1.png")'/>
         <img src="Art/personal/5.lemtinedigi2.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/5.lemtinedigi2.png")'/>
         <img src="Art/personal/6.lemtinedigi3.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/6.lemtinedigi3.png")'/>
-        <img src="Art/personal/7.mamadigi.png" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/7.mamadigi.png")'/>
         <img src="Art/personal/8.her-color pencil1.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/8.her-color pencil1.jpg")'/>
         <img src="Art/personal/9.her-colorpencil2.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/9.her-colorpencil2.jpg")'/>
         <img src="Art/personal/10.her-lineart.jpg" style="aspect-ratio: 4/5;" alt="Gallery Image 1"  onclick='openImageLightbox("Art/personal/10.her-lineart.jpg")'/>
@@ -928,17 +1025,29 @@
       </div>
   </div>
   </section>
-
-
-
-    
+  <section><!--Lightboxes-->
+    <!--video lightbox-->
+      <div id="video-lightbox" class="lightbox" onclick="closeVideoLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+          <video id="video-player" controls autoplay muted loop playsinline style="max-width:100%; max-height:80vh;"></video>
+          <div class="close-btn" onclick="closeVideoLightbox()">&times;</div>
+        </div>
+      </div>
+      <!-- YouTube Lightbox -->
+      <div id="youtube-lightbox" class="youtube-lightbox" onclick="closeYouTubeLightbox()">
+        <div class="yt-lightbox-content" onclick="event.stopPropagation()">
+          <iframe id="youtube-player" frameborder="0" allowfullscreen allow="autoplay" style="aspect-ratio: 16/9; height: 100%;"></iframe>
+          <div class="close-btn" onclick="closeYouTubeLightbox()">&times;</div>
+        </div>
+      </div>
+      <!--image lightbox-->
       <div id="image-lightbox" class="lightbox" onclick="closeImageLightbox()">
         <div class="lightbox-content" onclick="event.stopPropagation()">
           <img id="lightbox-image" src="" alt="">
         </div>
       </div>
-
   </section>
+</section>
   <footer id="contact" class="contact-section">
     <span class="quote">
     <p>“Let’s do art together”</p>
@@ -979,7 +1088,7 @@
 
   </footer>
 
-       <script>/*dropdown JAVASCRIPT*/
+        <script>/*dropdown JAVASCRIPT*/
           const trigger = document.querySelector('.dropdown-trigger');
           const menu = document.querySelector('.floating-dropdown');
 
@@ -1015,7 +1124,6 @@
             menu.style.display = 'block';
           });
         </script>
-        
         <script> /*Scroll*/
           const sections = document.querySelectorAll("section[id], footer[id]");
           const navLinks = document.querySelectorAll(".nav-links a, .floating-dropdown-list a");
@@ -1052,7 +1160,7 @@
           });
 
         </script>
-        <script> /*gallery*/
+         <script> /*gallery*/
           function openImageLightbox(src, title, description) {
             document.getElementById('lightbox-image').src = src;
             document.getElementById('image-lightbox').style.display = 'flex';
@@ -1063,8 +1171,40 @@
             document.getElementById('lightbox-image').src = '';
           }
 
-        </script>
+          function openVideoLightbox(src, title, description) {
+            const videoPlayer = document.getElementById('video-player');
+            videoPlayer.src = src;
+            videoPlayer.load();
+            videoPlayer.controls = true;
+            videoPlayer.muted = false;
+            videoPlayer.autoplay = true;
+            videoPlayer.loop = true;
+            videoPlayer.playsInline = true;
+            videoPlayer.play().catch(e => console.warn("Autoplay prevented:", e));
+            document.getElementById('video-lightbox').style.display = 'flex';
+          }
 
+          function closeVideoLightbox() {
+            const videoLightbox = document.getElementById('video-lightbox');
+            const videoPlayer = document.getElementById('video-player');
+            videoLightbox.style.display = 'none';
+            videoPlayer.pause();
+            videoPlayer.src = "";
+          }
+        </script>
+        <script>/*yt lightbox*/
+          function openYouTubeLightbox(url, title, description) {
+            const box = document.getElementById("youtube-lightbox");
+            document.getElementById("youtube-player").src = url + "?autoplay=1&rel=0";
+            box.style.display = "flex";
+          }
+
+          function closeYouTubeLightbox() {
+            const box = document.getElementById("youtube-lightbox");
+            box.style.display = "none";
+            document.getElementById("youtube-player").src = "";
+          }
+        </script>
         <script> /*contact milky animation*/
         document.addEventListener('DOMContentLoaded', () => {
           const image = document.querySelector('.contact-image');
@@ -1107,9 +1247,8 @@
             });
           }
         });
-      </script>
-      
-        <script>
+        </script>
+        <script>/*hamburger*/
         function toggleMenu() {
           const navLinks = document.getElementById("navLinks");
           const hamburger = document.getElementById("hamburgerBtn");
@@ -1123,7 +1262,8 @@
             hamburger.textContent = "☰"; // Hamburger icon
           }
         }
-      </script>
+        </script>
+
 </body>
 
 </html>

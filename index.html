@@ -458,6 +458,25 @@
     .gallery video:hover {
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
+
+    .more{
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding-bottom: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .morecon{
+      justify-self: right;
+    }
+
+    .morebtn{
+      justify-self: right; 
+      align-items: right  ;
+
+    }
     
     .lightbox{
       display: none;
@@ -495,8 +514,7 @@
       object-fit: contain;
     }
 
-    .text-lightbox {
-      background: #00000021;
+     .text-lightbox {
       box-sizing: border-box;
       width: 300px;
       align-self: start;
@@ -507,7 +525,7 @@
       word-break: break-word;
       overflow-wrap: break-word;
       flex-shrink: 1;
-    }
+    } 
 
     .text-lightbox h2{
       font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -515,12 +533,43 @@
       text-align: right;
       word-break: break-word;
       overflow-wrap: break-word;
+      color: #ffffff;
     }
 
     .text-lightbox p{
       text-align: right;
       word-break: break-word;
       overflow-wrap: break-word;
+      color: #ffffff;
+    }
+
+   /* .sketch-lightbox {
+      box-sizing: border-box;
+      width: 300px;
+      align-self: start;
+      justify-content: left;
+      padding: 10px;
+      color: #ffffff;
+      border-radius: 20px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      flex-shrink: 1;
+    } */
+
+    .sketch-lightbox h2{
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight: bold;
+      text-align: right;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      color: #ffffff;
+    }
+
+    .sketch-lightbox p{
+      text-align: right;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      color: #ffffff;
     }
 
     .close-btn{
@@ -981,7 +1030,7 @@
   <section id="home" class="about-section">
   <div class="about-text">
     <h1><span class="greet">Hi, I'm</span><br>Lemrish John Belarmino</h1>
-    <h2>Character Illustrator • Storyboard Artist • Animator</h2>
+    <h2>Character Illustrator  • Animator</h2>
    <p>
     I’m Lem_milky, a visual artist and animator from the Philippines. I love drawing characters, making anime fanart, and animating scenes. My work blends traditional lineart with digital color, and I enjoy bringing drawings to life through motion and storytelling.
   </p>
@@ -1025,6 +1074,12 @@
         <img src="Special art/16.Roz.jpg" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/16.Roz.jpg", "The Wild Robot", "ROZZUM Unit 7134 — gentle lines, silent story.")'/>
       </div>
       <div class="gallery">
+        <img src="Art/digital/1. Anime Eyes.png" alt="Gallery Image 1"  onclick='openSketchLightbox("Art/digital/1. Anime Eyes.png")'/>
+        <img src="Art/digital/2. Head angles.png" alt="Gallery Image 1"  onclick='openSketchLightbox("Art/digital/2. Head angles.png")'/>
+        <img src="Art/digital/4. Hairstyles.png" alt="Gallery Image 1"  onclick='openSketchLightbox("Art/digital/4. Hairstyles.png")'/>
+        <img src="Art/digital/5. Hands.png" alt="Gallery Image 1"  onclick='openSketchLightbox("Art/digital/5. Hands.png")'/>
+      </div>
+      <div class="gallery">
         <img src="Special art/21.kinncloseyes.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/21.kinncloseyes.png", "Kinn Reacher: Eyes Closed", "DISSIMILAR teaser — calm before the storm.")'/>
         <img src="Special art/22.kinnjump.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/22.kinnjump.png", "Kinn Reacher: Leap", "Leaping into destiny — action frame for DISSIMILAR teaser.")'/>
         <img src="Special art/23.kinnsleep.png" alt="Gallery Image 1"  onclick='openImageLightbox("Special art/23.kinnsleep.png", "Kinn Reacher: Rest", "Every hero rests — final concept art from teaser trailer.")'/>
@@ -1039,6 +1094,16 @@
           <img id="lightbox-image" src="" alt="">
         </div>
       </div>
+      <div id="sketch-lightbox" class="lightbox" onclick="closeSketchLightbox()">
+        <div class="sketch-lightbox">
+           <h2 id="sketch-title"></h2>
+          <p id="sketch-description"></p>
+        </div>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+          <img id="lightbox-sketch" src="" alt="">
+        </div>
+      </div>
+      <div class="more"><div class="morecon"><button onclick="location.href='illustration.html'" class="morebtn">More >></button></div></div>
 
   </section>
   <section id = "animations" class="arthead">
@@ -1065,7 +1130,7 @@
           <div class="play-overlay">&#9658;</div>
         </div>
       </div>
-      <div class="gallery"> <!--third section -->
+      <div class="gallery"> <!--second section -->
         <!-- DISSIMILAR Trailer via YouTube -->
           <div class="video-thumbnail" onclick='openYouTubeLightbox("https://www.youtube.com/embed/G9On_zUPdus", "DISSIMILAR: Crystal of Destiny - Teaser Trailer", "The first Concept for Dissimilar - Capstone Project 1")'>
             <img src="Special art/dissimilar trailer.png" alt="Trailer Thumbnail">
@@ -1077,13 +1142,13 @@
           <div class="play-overlay">&#9658;</div>
         </div>
       </div>
-      <div class="gallery"> <!--fourth section -->
+      <div class="gallery"> <!--third section -->
         <div class="video-thumbnail" onclick='openYouTubeLightbox("https://www.youtube.com/embed/h3h3UZwbGws", "DISSIMILAR and the Crystal of Destiny", "Short Animated Film - Final Capstone Project 2")'>
           <img src="Special art/TheFinalDissimilar.png">
           <div class="play-overlay">&#9658;</div>
         </div>
       </div>
-      <div class="gif" > <!--fifth section -->
+      <div class="gif" > <!--fourth section -->
         <div class="gif-video-thumbnail" style="height: auto; max-width: 400px; aspect-ratio: 4/5; object-fit: cover;" onclick='openImageLightbox("Special art/coffee smoke animation.gif", "Coffee lovers", "Coffee smoke animation effects")'>
           <img src="Special art/coffee smoke animation.gif"></img>
         </div>
@@ -1291,6 +1356,18 @@
           function closeImageLightbox() {
             document.getElementById('image-lightbox').style.display = 'none';
             document.getElementById('lightbox-image').src = '';
+          }
+
+          function openSketchLightbox(src, title, description) {
+            document.getElementById('lightbox-sketch').src = src;
+            document.getElementById('sketch-title').textContent = title;
+            document.getElementById('sketch-description').textContent = description;
+            document.getElementById('sketch-lightbox').style.display = 'flex';
+          }
+
+          function closeSketchLightbox() {
+            document.getElementById('sketch-lightbox').style.display = 'none';
+            document.getElementById('lightbox-sketch').src = '';
           }
 
           function openVideoLightbox(src, title, description) {
